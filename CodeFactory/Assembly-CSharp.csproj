@@ -64,7 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mhoover/OneDrive - York County School of Technology/Programming/Git/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

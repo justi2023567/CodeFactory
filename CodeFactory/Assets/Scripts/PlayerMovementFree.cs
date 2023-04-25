@@ -16,13 +16,14 @@ public class PlayerMovementFree : MonoBehaviour
     {
         if (pm.playing == true)
         {
-            PlayerBody.transform.parent = null;
+            this.transform.parent = null;
 
             //Cam controls
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
             ttf.x += Input.GetAxis("Mouse Y") * pm.mousesens * (-1);
+            ttf.x = Mathf.Clamp(ttf.x, -60f, 60f);
 
             ttf.y -= Input.GetAxis("Mouse X") * pm.mousesens * (-1);
 

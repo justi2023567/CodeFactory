@@ -16,7 +16,6 @@ public class RaycastPoint : MonoBehaviour
 
         if (Physics.Raycast(this.transform.position, -Vector3.up, out hit))
         {
-            Debug.Log(hit.distance);
             if (hit.distance < 2f)
             {
                 if (Y == 0)

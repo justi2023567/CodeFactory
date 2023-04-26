@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
             ttf.y = 0;
             //ttf.y = PlayerBody.transform.rotation.y;
             this.transform.position = Cam1SnapPos.transform.position;
-            Debug.Log(Cam1SnapPos.transform.position);
             this.transform.rotation = Cam1SnapPos.transform.rotation;
             CameraState = 1;
             reset = true;

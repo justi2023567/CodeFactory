@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\PlayerMovementFree.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementLock.cs" />
     <Compile Include="Assets\Scripts\SettingsController.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\WaitForKey.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mhoover/OneDrive - York County School of Technology/Documents/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -97,6 +98,35 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/mhoover/OneDrive - York County School of Technology/Documents/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+=======
+    <Compile Include="Assets\WalkBotScript.cs" />
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/xmatheson/GitHub/CodeFactory/CodeFactory/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

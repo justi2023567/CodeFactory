@@ -9,6 +9,9 @@ public class OreMining : MonoBehaviour
 
     public GameObject Player;
 
+    public float firerate = 1f;
+    public float nextfire = 4f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,8 +60,9 @@ public class OreMining : MonoBehaviour
             Debug.Log(oreGot);
         }
         // Makes a new ore (testing purposes only)
-        if (Input.GetKey(KeyCode.Alpha2) && !GetComponent<BoxCollider>())
+        if (Input.GetKey(KeyCode.Alpha2) && !GetComponent<BoxCollider>() && Time.time > nextfire)
         {
+            nextfire = Time.time + firerate;
             Instantiate(ore);
             ore.GetComponent<MeshRenderer>().enabled = true;
             Debug.Log("Ore Created");

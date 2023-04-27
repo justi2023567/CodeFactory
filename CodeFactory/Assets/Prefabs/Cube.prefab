@@ -108,3 +108,5 @@ MonoBehaviour:
   ore: {fileID: 0}
   oreGot: 
   Player: {fileID: 0}
+  firerate: 0.5
+  nextfire: 4

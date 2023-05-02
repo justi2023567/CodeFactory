@@ -55,7 +55,7 @@ public class WalkBotScript : MonoBehaviour {
         // Changes the ore's tag to "Collected" to remove it from "ore" list
         if (other.tag == "ore")
         {
-            other.tag = "Collected";
+            // other.tag = "Collected";
         }
     }
 }

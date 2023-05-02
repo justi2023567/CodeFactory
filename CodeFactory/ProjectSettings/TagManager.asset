@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ore
   - Collected
+  - Func
+  - If
   layers:
   - Default
   - TransparentFX

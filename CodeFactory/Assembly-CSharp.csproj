@@ -64,6 +64,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CodeBlocks.cs" />
+    <Compile Include="Assets\Controller.cs" />
     <Compile Include="Assets\Scripts\AttemptedCamColl.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\OreMining.cs" />

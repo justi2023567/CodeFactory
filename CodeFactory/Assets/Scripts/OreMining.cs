@@ -8,6 +8,8 @@ public class OreMining : MonoBehaviour
     public GameObject orePrefab;
     public GameObject oreExplode;
 
+    public bool blowup = false;
+
     public string oreGot;
 
     public GameObject Player;
@@ -25,9 +27,8 @@ public class OreMining : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Destroys ore when 1 is pressed and tells you what you got (ore being destroyed by pressing 1 is for testing purposes only)
-        // Will be changed so the orebot breaks the ore by itself with no input from the player
-        if (Input.GetKey(KeyCode.Alpha1))
+        // Destroys ore when orebot mines ore
+        if (blowup == true)
         {
             // Gets Player tag to add ores to inventory
             Player = GameObject.FindGameObjectWithTag("Player");
@@ -77,6 +78,7 @@ public class OreMining : MonoBehaviour
 
             // Replaces the destroyed ore with an ore exploding animation
             Instantiate(oreExplode);
+            blowup = false;
         }
         // Makes a new ore when 2 is pressed (testing purposes only)
         // Will be changed to ores respawning overtime with random generation in a set area

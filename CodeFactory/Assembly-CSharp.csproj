@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AttemptedCamColl.cs" />
+    <Compile Include="Assets\Scripts\ConBeltScript.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\OreMining.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

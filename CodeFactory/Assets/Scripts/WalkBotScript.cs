@@ -52,10 +52,10 @@ public class WalkBotScript : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        // Changes the ore's tag to "Collected" to remove it from "ore" list
+        // Blows up the ore using the ore tag
         if (other.tag == "ore")
         {
-            // other.tag = "Collected";
+            this.GetComponent<OreMining>().blowup = true;
         }
     }
 }

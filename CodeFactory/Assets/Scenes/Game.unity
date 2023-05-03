@@ -2585,7 +2585,7 @@ GameObject:
   - component: {fileID: 1046556432}
   m_Layer: 0
   m_Name: WalkBot
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4104,6 +4104,7 @@ GameObject:
   - component: {fileID: 1670497124}
   - component: {fileID: 1670497129}
   - component: {fileID: 1670497130}
+  - component: {fileID: 1670497131}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -4248,15 +4249,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42556e31b72e5e4fa20621f9fa9dbc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CodeBlocksMenu: {fileID: 0}
-  InteractButton: 0
-  firerate: 0
+  CodeBlocksMenu: {fileID: 465958699958263496}
+  InteractButton: 101
+  firerate: 0.3
   nextfire: 0
   open: 0
   ready: 0
-  controller: {fileID: 0}
-  pc: {fileID: 0}
+  controller: {fileID: 465958701320771289}
+  pc: {fileID: 963194229}
   LastCollided: {fileID: 0}
+--- !u!65 &1670497131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670497122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8228476, y: 2, z: 1.7811736}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1686030193
 GameObject:
   m_ObjectHideFlags: 0
@@ -10145,7 +10159,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 465958701320771289}
         m_MethodName: Check
         m_Mode: 1
         m_Arguments:

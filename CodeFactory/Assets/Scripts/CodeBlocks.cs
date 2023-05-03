@@ -55,6 +55,9 @@ public class CodeBlocks : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         ready = false;
-        other.GetComponent<WalkBotScript>().code = controller.code;
+        if (other.tag == "Bot")
+        {
+            other.GetComponent<WalkBotScript>().code = controller.code;
+        }
     }
 }

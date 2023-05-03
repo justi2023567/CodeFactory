@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ore
   - Collected
+  - Bot
   layers:
   - Default
   - TransparentFX

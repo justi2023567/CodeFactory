@@ -8,6 +8,7 @@ TagManager:
   - Collected
   - Func
   - If
+  - Bot
   layers:
   - Default
   - TransparentFX

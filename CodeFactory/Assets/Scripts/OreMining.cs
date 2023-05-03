@@ -18,12 +18,6 @@ public class OreMining : MonoBehaviour
     public float firerate = 1f;
     public float nextfire = 4f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Ore Test");
-    }
-
     // Update is called once per frame
     void Update()
     {

@@ -14,6 +14,9 @@ public class OreMining : MonoBehaviour
 
     public string oreGot;
 
+    public float radius = 3f;
+    public float power = 200f;
+
     public GameObject Player;
 
     // Controls the time between a new block being made (needs to be changed in Unity also)
@@ -80,6 +83,15 @@ public class OreMining : MonoBehaviour
 
             // Replaces the destroyed ore with an ore exploding animation
             var cloneOreExplode = Instantiate(oreExplode, new Vector3(1.13f, 0.8336654f, 7.76f), Quaternion.identity);
+            Vector3 explosionPos = new Vector3(1.13f, 0.8336654f, 7.76f);
+            Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+            foreach (Collider hit in colliders)
+            {
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                    rb.AddExplosionForce(power, explosionPos, radius, 1.0F);
+            }
             blowup = false;
             Destroy(cloneOreExplode, 9.25f);
         }

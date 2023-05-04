@@ -20,6 +20,12 @@ public class OreMining : MonoBehaviour
     public float firerate = 1f;
     public float nextfire = 4f;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Ore Test");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,39 +42,36 @@ public class OreMining : MonoBehaviour
             ore = GameObject.FindGameObjectWithTag("ore");
 
             // Ore Randomization Start
-            if (collectOre == true)
-            {
-                // Makes a number from 1 to 100
-                var ranNum = Random.Range(0, 100) + 1;
+            // Makes a number from 1 to 100
+            var ranNum = Random.Range(0, 100) + 1;
 
-                // Uses the randomly selected number to chose an ore and add it to the player's inventory
-                if (ranNum <= 50)
-                {
-                    oreGot = "Stone";
-                    playerInv.stoneCount += 1;
-                }
-                if (ranNum > 50 && ranNum <= 73)
-                {
-                    oreGot = "Coal";
-                    playerInv.coalCount += 1;
-                }
-                if (ranNum > 73 && ranNum <= 91)
-                {
-                    oreGot = "Iron";
-                    playerInv.ironCount += 1;
-                }
-                if (ranNum > 91 && ranNum < 100)
-                {
-                    oreGot = "Gold";
-                    playerInv.goldCount += 1;
-                }
-                if (ranNum == 100)
-                {
-                    oreGot = "Diamond";
-                    playerInv.diamondCount += 1;
-                }
-                // Ore Randomization End
+            // Uses the randomly selected number to chose an ore and add it to the player's inventory
+            if (ranNum <= 50)
+            {
+                oreGot = "Stone";
+                playerInv.stoneCount += 1;
             }
+            if (ranNum > 50 && ranNum <= 73)
+            {
+                oreGot = "Coal";
+                playerInv.coalCount += 1;
+            }
+            if (ranNum > 73 && ranNum <= 91)
+            {
+                oreGot = "Iron";
+                playerInv.ironCount += 1;
+            }
+            if (ranNum > 91 && ranNum < 100)
+            {
+                oreGot = "Gold";
+                playerInv.goldCount += 1;
+            }
+            if (ranNum == 100)
+            {
+                oreGot = "Diamond";
+                playerInv.diamondCount += 1;
+            }
+            // Ore Randomization End
 
             // Destroys the ore
             Destroy(ore.gameObject);
@@ -76,8 +79,9 @@ public class OreMining : MonoBehaviour
             Debug.Log(oreGot);
 
             // Replaces the destroyed ore with an ore exploding animation
-            Instantiate(oreExplode);
+            var cloneOreExplode = Instantiate(oreExplode, new Vector3(1.13f, 0.8336654f, 7.76f), Quaternion.identity);
             blowup = false;
+            Destroy(cloneOreExplode, 9.25f);
         }
         // Makes a new ore when 2 is pressed (testing purposes only)
         // Will be changed to ores respawning overtime with random generation in a set area

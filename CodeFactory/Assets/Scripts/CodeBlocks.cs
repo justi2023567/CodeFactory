@@ -48,14 +48,14 @@ public class CodeBlocks : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         ready = true;
     }
     private void OnTriggerExit(Collider other)
     {
         ready = false;
-        if (other.tag == "Bot")
+        if (other.tag == "Bot" && controller.error == false)
         {
             other.GetComponent<WalkBotScript>().code = controller.code;
         }

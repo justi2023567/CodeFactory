@@ -9,9 +9,12 @@ public class WalkBotScript : MonoBehaviour {
     public Transform tMin;
     Vector3 startPos;
 
+    public int InvContaining = 0;
+
     public string code = "";
 
     public bool canMine = false;
+    public bool canStore = false;
     public bool returnon = false;
 
     public int invFullState = 0;
@@ -33,42 +36,60 @@ public class WalkBotScript : MonoBehaviour {
             }
             foreach (string character in characters)
             {
-                if (character == "1")
+                if (invFullState != 2)
                 {
-                    canMine = true;
-                }
-                if (character == "3")
-                {
-                    // Assigns all game objects with the tag "ore" as the variable "goals"
-                    goals = GameObject.FindGameObjectsWithTag("ore");
-
-                    foreach (GameObject t in goals)
+                    if (character == "1")
                     {
-                        // Finds location of ores
-                        float minDist = Mathf.Infinity;
-                        Vector3 currentPos = transform.position;
-                        foreach (GameObject tt in goals)
-                        {
-                            // Finds the closest ore to the robot
-                            float dist = Vector3.Distance(tt.transform.position, currentPos);
-                            if (dist < minDist)
-                            {
-                                minDist = dist;
-                                tMin = tt.transform;
-                            }
+                        canMine = true;
+                    }
+                    if (character == "2")
+                    {
+                        canStore = true;
+                    }
+                    if (character == "3")
+                    {
+                        // Assigns all game objects with the tag "ore" as the variable "goals"
+                        goals = GameObject.FindGameObjectsWithTag("ore");
 
+                        foreach (GameObject t in goals)
+                        {
+                            // Finds location of ores
+                            float minDist = Mathf.Infinity;
+                            Vector3 currentPos = transform.position;
+                            foreach (GameObject tt in goals)
+                            {
+                                // Finds the closest ore to the robot
+                                float dist = Vector3.Distance(tt.transform.position, currentPos);
+                                if (dist < minDist)
+                                {
+                                    minDist = dist;
+                                    tMin = tt.transform;
+                                }
+
+                            }
+                            // Moves robot to the closest ore
+                            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                            agent.destination = tMin.position;
                         }
-                        // Moves robot to the closest ore
+                    }
+                    if (character == "4")
+                    {
                         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                        agent.destination = tMin.position;
+                        agent.destination = startPos;
                     }
                 }
-                if (character == "4")
-                {
-                    NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                    agent.destination = startPos;
-                }
                 if (character == "5")
+                {
+                    if (InvContaining == 5)
+                    {
+                        invFullState = 1;
+                    }
+                    else
+                    {
+                        invFullState = 2;
+                    }
+                }
+                if (character == "6")
                 {
                     invFullState = 1;
                 }
@@ -88,7 +109,12 @@ public class WalkBotScript : MonoBehaviour {
         // Blows up the ore using the ore tag
         if (other.tag == "ore" && canMine == true)
         {
+            if (canStore == true)
+            {
+                InvContaining++;
+            }
             this.GetComponent<OreMining>().blowup = true;
+            this.GetComponent<OreMining>().collectOre = canStore;
         }
     }
 }

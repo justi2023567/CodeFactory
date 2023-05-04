@@ -10,6 +10,8 @@ public class OreMining : MonoBehaviour
 
     public bool blowup = false;
 
+    public bool collectOre = false;
+
     public string oreGot;
 
     public GameObject Player;
@@ -34,36 +36,39 @@ public class OreMining : MonoBehaviour
             ore = GameObject.FindGameObjectWithTag("ore");
 
             // Ore Randomization Start
-            // Makes a number from 1 to 100
-            var ranNum = Random.Range(0, 100) + 1;
+            if (collectOre == true)
+            {
+                // Makes a number from 1 to 100
+                var ranNum = Random.Range(0, 100) + 1;
 
-            // Uses the randomly selected number to chose an ore and add it to the player's inventory
-            if (ranNum <= 50)
-            {
-                oreGot = "Stone";
-                playerInv.stoneCount += 1;
+                // Uses the randomly selected number to chose an ore and add it to the player's inventory
+                if (ranNum <= 50)
+                {
+                    oreGot = "Stone";
+                    playerInv.stoneCount += 1;
+                }
+                if (ranNum > 50 && ranNum <= 73)
+                {
+                    oreGot = "Coal";
+                    playerInv.coalCount += 1;
+                }
+                if (ranNum > 73 && ranNum <= 91)
+                {
+                    oreGot = "Iron";
+                    playerInv.ironCount += 1;
+                }
+                if (ranNum > 91 && ranNum < 100)
+                {
+                    oreGot = "Gold";
+                    playerInv.goldCount += 1;
+                }
+                if (ranNum == 100)
+                {
+                    oreGot = "Diamond";
+                    playerInv.diamondCount += 1;
+                }
+                // Ore Randomization End
             }
-            if (ranNum > 50 && ranNum <= 73)
-            {
-                oreGot = "Coal";
-                playerInv.coalCount += 1;
-            }
-            if (ranNum > 73 && ranNum <= 91)
-            {
-                oreGot = "Iron";
-                playerInv.ironCount += 1;
-            }
-            if (ranNum > 91 && ranNum < 100)
-            {
-                oreGot = "Gold";
-                playerInv.goldCount += 1;
-            }
-            if (ranNum == 100)
-            {
-                oreGot = "Diamond";
-                playerInv.diamondCount += 1;
-            }
-            // Ore Randomization End
 
             // Destroys the ore
             Destroy(ore.gameObject);

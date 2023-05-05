@@ -3124,10 +3124,10 @@ RectTransform:
   m_Father: {fileID: 2070621575}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 883.2, y: 452}
-  m_SizeDelta: {x: 189.6, y: 50.3}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -121.79999, y: -64}
+  m_SizeDelta: {x: 189.59998, y: 50.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215665747
 MonoBehaviour:
@@ -4304,7 +4304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CodeBlocksMenu: {fileID: 465958699958263496}
   InteractButton: 101
-  firerate: 0.02
+  firerate: 0
   nextfire: 0
   open: 0
   ready: 0

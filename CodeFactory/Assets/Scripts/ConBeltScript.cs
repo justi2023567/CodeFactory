@@ -17,6 +17,7 @@ public class ConBeltScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // When something is on the belt, move it
         for(int i = 0; i <= onBelt.Count -1; i++)
         {
             onBelt[i].GetComponent<Rigidbody>().velocity = speed * direction * Time.deltaTime;

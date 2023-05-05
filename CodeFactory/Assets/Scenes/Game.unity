@@ -3840,10 +3840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a8aeb24357d07459737997c5ccf369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ore: {fileID: 5518004481137635715, guid: a879005595e708b4da5ca1c888acd560, type: 3}
-  orePrefab: {fileID: 5518004481137635715, guid: a879005595e708b4da5ca1c888acd560,
+  ore: {fileID: 9051482793227874658, guid: 581b84914a091994081c784aec7aed5a, type: 3}
+  orePrefab: {fileID: 9051482793227874658, guid: 581b84914a091994081c784aec7aed5a,
     type: 3}
-  oreExplode: {fileID: 4725713286661100505, guid: 95ac4479028db764cac511fa6327f550,
+  oreExplode: {fileID: 8416581562237619328, guid: c908d1612862d914e981926107603897,
     type: 3}
   blowup: 0
   collectOre: 1

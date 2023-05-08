@@ -20,15 +20,6 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Displays your ore count when 3 is pressed (testing purposes only)
-        // Will be changed to an official key to view your entire inventory
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            Debug.Log("Stone:" + stoneCount);
-            Debug.Log("Coal:" + coalCount);
-            Debug.Log("Iron:" + ironCount);
-            Debug.Log("Gold:" + goldCount);
-            Debug.Log("Diamond:" + diamondCount);
-        }
+
     }
 }

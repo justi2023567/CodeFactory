@@ -21,7 +21,7 @@ public class StoneAnimationFadeOut : MonoBehaviour
 
     void fadeOut()
     {
-        alpha -= Time.deltaTime / fadeTime; // Lessens the alpha value
+        alpha -= Time.deltaTime / 5f; // Lessens the alpha value
         alpha = Mathf.Clamp01(alpha); // Makes sure theirs no negative alpha values
         objectColor.a = alpha; // Apply that alpha to the objects alpha
         GetComponent<Renderer>().material.color = objectColor; // Render that new color

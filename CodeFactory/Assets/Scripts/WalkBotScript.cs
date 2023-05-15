@@ -17,6 +17,9 @@ public class WalkBotScript : MonoBehaviour {
     public bool canStore = false;
     public bool returnon = false;
 
+    public float firerate = 1f;
+    public float nextfire = 4f;
+
     public int invFullState = 0;
 
     // Start is called before the first frame update
@@ -80,7 +83,7 @@ public class WalkBotScript : MonoBehaviour {
                 }
                 if (character == "5")
                 {
-                    if (InvContaining == 5)
+                    if (InvContaining >= 5)
                     {
                         invFullState = 1;
                     }
@@ -109,8 +112,9 @@ public class WalkBotScript : MonoBehaviour {
         // Blows up the ore using the ore tag
         if (other.tag == "ore" && canMine == true)
         {
-            if (canStore == true)
+            if (canStore == true && Time.time > nextfire)
             {
+                nextfire = Time.time + firerate;
                 InvContaining++;
             }
             this.GetComponent<OreMining>().blowup = true;

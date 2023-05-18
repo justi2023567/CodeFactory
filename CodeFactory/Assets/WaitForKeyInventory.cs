@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WaitForKey : MonoBehaviour
+public class WaitForKeyInventory : MonoBehaviour
 {
     public Event keyEvent;
     public Text text;
@@ -25,7 +25,7 @@ public class WaitForKey : MonoBehaviour
         {
             var keyText = keyEvent.keyCode.ToString();
             text.text = keyText;
-            pc.CameraStateKey = keyEvent.keyCode;
+            pc.InventoryStateKey = keyEvent.keyCode;
             obj = null;
         }
     }

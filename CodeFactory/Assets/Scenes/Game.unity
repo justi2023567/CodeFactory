@@ -4938,6 +4938,7 @@ GameObject:
   - component: {fileID: 812035471}
   - component: {fileID: 812035473}
   - component: {fileID: 812035472}
+  - component: {fileID: 812035474}
   m_Layer: 0
   m_Name: Coal
   m_TagString: Untagged
@@ -4953,7 +4954,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812035470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1801301019}
@@ -5004,6 +5005,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812035470}
   m_CullTransparentMesh: 0
+--- !u!114 &812035474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812035470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78629b2ef062d284aaef189be4e1d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 812035472}
+  ifstone: 0
+  ifcoal: 1
+  ifiron: 0
+  ifgold: 0
+  ifdiamond: 0
+  playerInventory: {fileID: 1670497129}
 --- !u!1 &818714462
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,6 +7217,7 @@ GameObject:
   - component: {fileID: 1100027639}
   - component: {fileID: 1100027641}
   - component: {fileID: 1100027640}
+  - component: {fileID: 1100027642}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Untagged
@@ -7263,6 +7284,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100027638}
   m_CullTransparentMesh: 0
+--- !u!114 &1100027642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100027638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78629b2ef062d284aaef189be4e1d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1100027640}
+  ifstone: 0
+  ifcoal: 0
+  ifiron: 0
+  ifgold: 1
+  ifdiamond: 0
+  playerInventory: {fileID: 1670497129}
 --- !u!1 &1100967692
 GameObject:
   m_ObjectHideFlags: 0
@@ -7654,6 +7694,7 @@ GameObject:
   - component: {fileID: 1204248893}
   - component: {fileID: 1204248895}
   - component: {fileID: 1204248894}
+  - component: {fileID: 1204248896}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -7720,6 +7761,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204248892}
   m_CullTransparentMesh: 0
+--- !u!114 &1204248896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204248892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78629b2ef062d284aaef189be4e1d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1204248894}
+  ifstone: 0
+  ifcoal: 0
+  ifiron: 0
+  ifgold: 0
+  ifdiamond: 1
+  playerInventory: {fileID: 1670497129}
 --- !u!1 &1206219495
 GameObject:
   m_ObjectHideFlags: 0
@@ -7731,6 +7791,7 @@ GameObject:
   - component: {fileID: 1206219496}
   - component: {fileID: 1206219498}
   - component: {fileID: 1206219497}
+  - component: {fileID: 1206219499}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Untagged
@@ -7797,6 +7858,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206219495}
   m_CullTransparentMesh: 0
+--- !u!114 &1206219499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206219495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78629b2ef062d284aaef189be4e1d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1206219497}
+  ifstone: 0
+  ifcoal: 0
+  ifiron: 1
+  ifgold: 0
+  ifdiamond: 0
+  playerInventory: {fileID: 1670497129}
 --- !u!1 &1214384421
 GameObject:
   m_ObjectHideFlags: 0
@@ -9699,6 +9779,7 @@ GameObject:
   - component: {fileID: 1585232362}
   - component: {fileID: 1585232364}
   - component: {fileID: 1585232363}
+  - component: {fileID: 1585232365}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -9765,6 +9846,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585232361}
   m_CullTransparentMesh: 0
+--- !u!114 &1585232365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585232361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78629b2ef062d284aaef189be4e1d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1585232363}
+  ifstone: 1
+  ifcoal: 0
+  ifiron: 0
+  ifgold: 0
+  ifdiamond: 0
+  playerInventory: {fileID: 1670497129}
 --- !u!1 &1599172813
 GameObject:
   m_ObjectHideFlags: 0

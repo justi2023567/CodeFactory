@@ -27,6 +27,13 @@ public class OreMining : MonoBehaviour
     public float firerate = 1f;
     public float nextfire = 4f;
 
+    // Controls the time between being able to break a block (needs to be changed in Unity also)
+    public float firerate2 = 1f;
+    public float nextfire2 = 1f;
+
+    // Holds particles
+    public ParticleSystem sparks;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,58 +57,68 @@ public class OreMining : MonoBehaviour
 
             // Ore Randomization Start
             // Makes a number from 1 to 100
-            var ranNum = Random.Range(0, 100) + 1;
+            if (ore.GetComponent<OreHealth>().health <= 0)
+            {
+                var ranNum = Random.Range(0, 100) + 1;
 
-            // Uses the randomly selected number to chose an ore and add it to the player's inventory
-            if (ranNum <= 50)
-            {
-                oreGot = "Stone";
-                playerInv.stoneCount += 1;
-            }
-            if (ranNum > 50 && ranNum <= 73)
-            {
-                oreGot = "Coal";
-                playerInv.coalCount += 1;
-            }
-            if (ranNum > 73 && ranNum <= 91)
-            {
-                oreGot = "Iron";
-                playerInv.ironCount += 1;
-            }
-            if (ranNum > 91 && ranNum < 100)
-            {
-                oreGot = "Gold";
-                playerInv.goldCount += 1;
-            }
-            if (ranNum == 100)
-            {
-                oreGot = "Diamond";
-                playerInv.diamondCount += 1;
-            }
-            // Ore Randomization End
+                // Uses the randomly selected number to chose an ore and add it to the player's inventory
+                if (ranNum <= 50)
+                {
+                    oreGot = "Stone";
+                    playerInv.stoneCount += 1;
+                }
+                if (ranNum > 50 && ranNum <= 73)
+                {
+                    oreGot = "Coal";
+                    playerInv.coalCount += 1;
+                }
+                if (ranNum > 73 && ranNum <= 91)
+                {
+                    oreGot = "Iron";
+                    playerInv.ironCount += 1;
+                }
+                if (ranNum > 91 && ranNum < 100)
+                {
+                    oreGot = "Gold";
+                    playerInv.goldCount += 1;
+                }
+                if (ranNum == 100)
+                {
+                    oreGot = "Diamond";
+                    playerInv.diamondCount += 1;
+                }
+                // Ore Randomization End
 
-            // Destroys the ore
-            Destroy(ore.gameObject);
-            Debug.Log("Ore Destroyed");
-            Debug.Log(oreGot);
+                // Destroys the ore
+                Destroy(ore.gameObject);
+                Debug.Log("Ore Destroyed");
+                Debug.Log(oreGot);
 
-            // Replaces the destroyed ore with an ore exploding animation. Starts Here.
-            var cloneOreExplode = Instantiate(oreExplode, new Vector3(1.13f, 0.8336654f, 7.76f), Quaternion.identity); // Clones the oreExplode asset so I can delete the cloned asset instead of the original asset
-            Vector3 explosionPos = new Vector3(1.13f, 0.8336654f, 7.76f); // Sets the coordinates of the explosion
-            Collider[] colliders = Physics.OverlapSphere(explosionPos, radius); //Finds every collider in a radius
-            // Loops through all the colliders
-            foreach (Collider hit in colliders)
-            {
-                // Gets the colliders rigidbody
-                Rigidbody rb = hit.GetComponent<Rigidbody>();
+                // Replaces the destroyed ore with an ore exploding animation. Starts Here.
+                var cloneOreExplode = Instantiate(oreExplode, new Vector3(1.13f, 0.8336654f, 7.76f), Quaternion.identity); // Clones the oreExplode asset so I can delete the cloned asset instead of the original asset
+                Vector3 explosionPos = new Vector3(1.13f, 0.8336654f, 7.76f); // Sets the coordinates of the explosion
+                Collider[] colliders = Physics.OverlapSphere(explosionPos, radius); //Finds every collider in a radius
+                                                                                    // Loops through all the colliders
+                foreach (Collider hit in colliders)
+                {
+                    // Gets the colliders rigidbody
+                    Rigidbody rb = hit.GetComponent<Rigidbody>();
 
-                // If the collider has a rigidbody, the explosion occurs
-                if (rb != null)
-                    rb.AddExplosionForce(power, explosionPos, radius, 1.0F); // 'power' controls the power of the explosion, 'explosionPos' sets the coordinates of the explosion, 'radius' controls the radius of the explosion, and the number controls the height of the explosion.
+                    // If the collider has a rigidbody, the explosion occurs
+                    if (rb != null)
+                        rb.AddExplosionForce(power, explosionPos, radius, 1.0F); // 'power' controls the power of the explosion, 'explosionPos' sets the coordinates of the explosion, 'radius' controls the radius of the explosion, and the number controls the height of the explosion.
+                }
+                blowup = false; // Sets the blowup variable to false so the next ore can blowup
+                Destroy(cloneOreExplode, 9.25f); // Destroys the cloned ore asset after 9.25 seconds
+                                                 // Replaces the destroyed ore with an ore exploding animation. Ends here.
             }
-            blowup = false; // Sets the blowup variable to false so the next ore can blowup
-            Destroy(cloneOreExplode, 9.25f); // Destroys the cloned ore asset after 9.25 seconds
-            // Replaces the destroyed ore with an ore exploding animation. Ends here.
+            else if (Time.time > nextfire2)
+            {
+                // Controls the time before the next mining process
+                nextfire2 = Time.time + firerate2;
+                sparks.Play();
+                ore.GetComponent<OreHealth>().health--;
+            }
         }
         // Makes a new ore when 2 is pressed (testing purposes only)
         // Will be changed to ores respawning overtime with random generation in a set area

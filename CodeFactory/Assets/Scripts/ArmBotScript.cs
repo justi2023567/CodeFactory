@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ArmBotScript : MonoBehaviour
 {
-
     public GameObject Sphere;
     public GameObject Target;
 
@@ -18,7 +17,8 @@ public class ArmBotScript : MonoBehaviour
 
         if (Sphere.transform.position == Target.transform.position)
         {
-            Sphere.transform.position = new Vector3(0.0f, 0.0f, 4.0f);
+            Sphere.transform.position = new Vector3(0.0f, 6.0f, 4.0f);
+            Sphere = null;
         }
     }
 

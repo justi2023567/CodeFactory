@@ -66,7 +66,7 @@ public class WalkBotScript : MonoBehaviour {
                                 if (dist < minDist)
                                 {
                                     minDist = dist;
-                                    tMin = tt.transform;
+                                    tMin = tt.transform; 
                                 }
 
                             }

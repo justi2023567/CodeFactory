@@ -10,23 +10,15 @@ public class WaitForKey : MonoBehaviour
 
     public PlayerController pc;
 
-    public GameObject obj;
-
-    public void OnClick(GameObject clicked)
-    {
-        obj = clicked;
-    }
-
-    public void OnGUI()
+    private void OnGUI()
     {
         keyEvent = Event.current;
 
-        if (keyEvent.isKey == true && obj == this.gameObject)
+        if (keyEvent.isKey == true)
         {
             var keyText = keyEvent.keyCode.ToString();
             text.text = keyText;
             pc.CameraStateKey = keyEvent.keyCode;
-            obj = null;
         }
     }
 }

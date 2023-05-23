@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public Transform tf;
     public Quaternion ttf;
     public GameObject SettingsMenu;
-    public GameObject InventoryMenu;
 
     public Event keyHappen;
 
@@ -21,7 +20,6 @@ public class PlayerController : MonoBehaviour
     public PlayerMovementFree FreeActivate;
 
     public KeyCode CameraStateKey;
-    public KeyCode InventoryStateKey;
 
     public Camera playerCamera;
     public float mousesens;
@@ -86,20 +84,6 @@ public class PlayerController : MonoBehaviour
             FreeActivate.ttf.y = LockActivate.ttf.y;
             CameraState = 2;
             reset = true;
-            return;
-        }
-        if (Input.GetKeyDown(InventoryStateKey) && playing == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            InventoryMenu.SetActive(true);
-            playing = false;
-            return;
-        }
-        if (Input.GetKeyDown(InventoryStateKey) && playing == false)
-        {
-            InventoryMenu.SetActive(false);
-            playing = true;
             return;
         }
     }

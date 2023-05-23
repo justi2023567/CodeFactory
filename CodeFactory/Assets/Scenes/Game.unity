@@ -123,6 +123,7 @@ NavMeshSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &88680641
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +246,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 87.666, z: 0}
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -604,6 +607,9 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -741,8 +747,11 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &215351681
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -960,6 +969,9 @@ MeshFilter:
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -1258,7 +1270,10 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -1376,6 +1391,9 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -3074,7 +3092,10 @@ Rigidbody:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -3310,6 +3331,7 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &845354463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,6 +3454,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855902481}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -3563,6 +3587,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &893483474
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,6 +3680,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893483474}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -5140,8 +5167,11 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1099132324
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -5299,6 +5329,9 @@ Rigidbody:
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -5570,6 +5603,7 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1277140619
 GameObject:
   m_ObjectHideFlags: 0
@@ -5770,6 +5804,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299445430}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -6078,7 +6114,10 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -6942,6 +6981,9 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -7050,7 +7092,10 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -7186,6 +7231,9 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -7401,6 +7449,9 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a7bbc33 (Added Player Menu)
+=======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
@@ -7928,7 +7979,10 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -8105,6 +8159,7 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1878474324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8197,6 +8252,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878474324}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
@@ -8503,6 +8560,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1981861459
 GameObject:
   m_ObjectHideFlags: 0
@@ -8595,6 +8653,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981861459}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> parent of a7bbc33 (Added Player Menu)
 =======
 >>>>>>> parent of a7bbc33 (Added Player Menu)
 =======

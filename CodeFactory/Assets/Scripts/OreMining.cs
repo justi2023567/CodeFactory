@@ -5,9 +5,13 @@ using UnityEngine;
 public class OreMining : MonoBehaviour
 {
     // These variables hold assets
-    public GameObject ore;
+    public GameObject[] ore;
     public GameObject orePrefab;
     public GameObject oreExplode;
+    public GameObject sparkPrefab;
+    public GameObject oreClosest;
+
+    public Transform oreMin;
 
     // Variable to tell if the ore has blown up or not
     public bool blowup = false;
@@ -34,12 +38,6 @@ public class OreMining : MonoBehaviour
     // Holds particles
     public ParticleSystem sparks;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -53,11 +51,29 @@ public class OreMining : MonoBehaviour
             var playerInv = Player.GetComponent<Inventory>();
 
             // Gets ore tag to delete all items with the ore tag
-            ore = GameObject.FindGameObjectWithTag("ore");
+            ore = GameObject.FindGameObjectsWithTag("ore");
+
+            foreach (GameObject t in ore)
+            {
+                // Finds location of ores
+                float minDist = Mathf.Infinity;
+                Vector3 currentPos = this.transform.position;
+                foreach (GameObject tt in ore)
+                {
+                    // Finds the closest ore to the robot
+                    float dist = Vector3.Distance(tt.transform.position, currentPos);
+                    if (dist < minDist)
+                    {
+                        minDist = dist;
+                        oreMin = tt.transform;
+                        oreClosest = tt.gameObject;
+                    }
+                }
+            }
 
             // Ore Randomization Start
             // Makes a number from 1 to 100
-            if (ore.GetComponent<OreHealth>().health <= 0)
+            if (oreClosest.GetComponent<OreHealth>().health <= 0)
             {
                 var ranNum = Random.Range(0, 100) + 1;
 
@@ -89,16 +105,16 @@ public class OreMining : MonoBehaviour
                 }
                 // Ore Randomization End
 
-                // Destroys the ore
-                Destroy(ore.gameObject);
-                Debug.Log("Ore Destroyed");
-                Debug.Log(oreGot);
 
                 // Replaces the destroyed ore with an ore exploding animation. Starts Here.
-                var cloneOreExplode = Instantiate(oreExplode, new Vector3(1.13f, 0.8336654f, 7.76f), Quaternion.identity); // Clones the oreExplode asset so I can delete the cloned asset instead of the original asset
-                Vector3 explosionPos = new Vector3(1.13f, 0.8336654f, 7.76f); // Sets the coordinates of the explosion
+                var cloneOreExplode = Instantiate(oreExplode, oreClosest.gameObject.transform.position, Quaternion.identity); // Clones the oreExplode asset so I can delete the cloned asset instead of the original asset
+                Vector3 explosionPos = oreClosest.gameObject.transform.position; // Sets the coordinates of the explosion
                 Collider[] colliders = Physics.OverlapSphere(explosionPos, radius); //Finds every collider in a radius
                                                                                     // Loops through all the colliders
+                // Destroys the ore
+                Destroy(oreClosest.gameObject);
+                Debug.Log("Ore Destroyed");
+                Debug.Log(oreGot);
                 foreach (Collider hit in colliders)
                 {
                     // Gets the colliders rigidbody
@@ -111,25 +127,16 @@ public class OreMining : MonoBehaviour
                 blowup = false; // Sets the blowup variable to false so the next ore can blowup
                 Destroy(cloneOreExplode, 9.25f); // Destroys the cloned ore asset after 9.25 seconds
                                                  // Replaces the destroyed ore with an ore exploding animation. Ends here.
+
             }
             else if (Time.time > nextfire2)
             {
                 // Controls the time before the next mining process
                 nextfire2 = Time.time + firerate2;
-                sparks.Play();
-                ore.GetComponent<OreHealth>().health--;
+                var pref = Instantiate(sparkPrefab, new Vector3(oreClosest.gameObject.transform.position.x, oreClosest.gameObject.transform.position.y + .7f, oreClosest.gameObject.transform.position.z), Quaternion.identity);
+                Destroy(pref, 2f);
+                oreClosest.GetComponent<OreHealth>().health--;
             }
-        }
-        // Makes a new ore when 2 is pressed (testing purposes only)
-        // Will be changed to ores respawning overtime with random generation in a set area
-        if (Input.GetKey(KeyCode.Alpha2) && Time.time > nextfire)
-        {
-            // Controls the time before the next ore can be made
-            nextfire = Time.time + firerate;
-
-            // New ore is made at selected coordinates
-            Instantiate(orePrefab, new Vector3(1.13f, 0.8336654f, 7.76f), Quaternion.identity);
-            Debug.Log("Ore Created");
         }
     }
 }

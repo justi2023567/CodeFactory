@@ -15,12 +15,12 @@ public class ArmBotScript : MonoBehaviour
             Sphere.transform.position = Vector3.MoveTowards(Sphere.transform.position, Target.transform.position, 0.20f);
         }
 
-        if (Sphere.transform.position == Target.transform.position)
+       /* if (Sphere.transform.position == Target.transform.position)
         {
             Sphere.transform.position = new Vector3(0.0f, 6.0f, 4.0f);
             Sphere = null;
         }
-    }
+*/    }
 
     private void OnTriggerEnter(Collider other)
     {

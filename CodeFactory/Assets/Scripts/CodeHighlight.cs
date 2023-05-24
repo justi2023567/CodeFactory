@@ -10,5 +10,10 @@ public class CodeHighlight : MonoBehaviour
     {
         input = s;
         Debug.Log(input);
+
+        if (s.Contains("player") || s.Contains("Player"))
+        {
+            Debug.Log("player is not a vaild command");
+        }
     }
 }

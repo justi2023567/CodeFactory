@@ -4504,14 +4504,11 @@ MonoBehaviour:
   oreMin: {fileID: 0}
   blowup: 0
   collectOre: 1
-  oreGot: 
   radius: 5
   power: 175
   Player: {fileID: 0}
   firerate: 1
-  nextfire: 4
-  firerate2: 1
-  nextfire2: 1
+  nextfire: 1
   sparks: {fileID: 5071835132905272111}
 --- !u!114 &1046556433
 MonoBehaviour:

@@ -11,14 +11,11 @@ public class OreMining : MonoBehaviour
     public GameObject sparkPrefab;
     public GameObject oreClosest;
 
-    public Transform oreMin;
-
     // Variable to tell if the ore has blown up or not
     public bool blowup = false;
 
     // Variables to tell if the ore has been collected
     public bool collectOre = false;
-    public string oreGot;
 
     // Variables to control the power and radius of the explosion
     public float radius = 3f;
@@ -27,13 +24,9 @@ public class OreMining : MonoBehaviour
     // The Player object
     public GameObject Player;
 
-    // Controls the time between a new block being made (needs to be changed in Unity also)
-    public float firerate = 1f;
-    public float nextfire = 4f;
-
     // Controls the time between being able to break a block (needs to be changed in Unity also)
-    public float firerate2 = 1f;
-    public float nextfire2 = 1f;
+    public float firerate = 1f;
+    public float nextfire = 1f;
 
     // Holds particles
     public ParticleSystem sparks;
@@ -65,7 +58,6 @@ public class OreMining : MonoBehaviour
                     if (dist < minDist)
                     {
                         minDist = dist;
-                        oreMin = tt.transform;
                         oreClosest = tt.gameObject;
                     }
                 }
@@ -80,27 +72,22 @@ public class OreMining : MonoBehaviour
                 // Uses the randomly selected number to chose an ore and add it to the player's inventory
                 if (ranNum <= 50)
                 {
-                    oreGot = "Stone";
                     playerInv.stoneCount += 1;
                 }
                 if (ranNum > 50 && ranNum <= 73)
                 {
-                    oreGot = "Coal";
                     playerInv.coalCount += 1;
                 }
                 if (ranNum > 73 && ranNum <= 91)
                 {
-                    oreGot = "Iron";
                     playerInv.ironCount += 1;
                 }
                 if (ranNum > 91 && ranNum < 100)
                 {
-                    oreGot = "Gold";
                     playerInv.goldCount += 1;
                 }
                 if (ranNum == 100)
                 {
-                    oreGot = "Diamond";
                     playerInv.diamondCount += 1;
                 }
                 // Ore Randomization End
@@ -113,8 +100,6 @@ public class OreMining : MonoBehaviour
                                                                                     // Loops through all the colliders
                 // Destroys the ore
                 Destroy(oreClosest.gameObject);
-                Debug.Log("Ore Destroyed");
-                Debug.Log(oreGot);
                 foreach (Collider hit in colliders)
                 {
                     // Gets the colliders rigidbody
@@ -129,10 +114,10 @@ public class OreMining : MonoBehaviour
                                                  // Replaces the destroyed ore with an ore exploding animation. Ends here.
 
             }
-            else if (Time.time > nextfire2)
+            else if (Time.time > nextfire)
             {
                 // Controls the time before the next mining process
-                nextfire2 = Time.time + firerate2;
+                nextfire = Time.time + firerate;
                 var pref = Instantiate(sparkPrefab, new Vector3(oreClosest.gameObject.transform.position.x, oreClosest.gameObject.transform.position.y + .7f, oreClosest.gameObject.transform.position.z), Quaternion.identity);
                 Destroy(pref, 2f);
                 oreClosest.GetComponent<OreHealth>().health--;

@@ -10,16 +10,4 @@ public class Inventory : MonoBehaviour
     public int ironCount = 0;
     public int goldCount = 0;
     public int diamondCount = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

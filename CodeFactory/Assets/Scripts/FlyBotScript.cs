@@ -41,6 +41,7 @@ public class FlyBotScript : MonoBehaviour
                     float dist = Vector3.Distance(tt.transform.position, currentPos);
                     if (dist < minDist)
                     {
+                        // Goes down over an ore **NOT WORKING**
                         minDist = dist;
                         tMin = tt.transform;
                         if (Vector3.Distance(transform.position, tMin.position) < 1)
@@ -55,7 +56,7 @@ public class FlyBotScript : MonoBehaviour
                 agent.destination = tMin.position;
             }
         }
-        // Lands when returning to start pos
+        // Lands when returning to start pos **NOT WORKING**
         if (Vector3.Distance(transform.position, startPos) < 1)
         {
             this.GetComponent<NavMeshAgent>().baseOffset = 0;
@@ -63,14 +64,6 @@ public class FlyBotScript : MonoBehaviour
         else
         {
             this.GetComponent<NavMeshAgent>().baseOffset = 60;
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        // Changes the ore's tag to "Collected" to remove it from "ore" list
-        if (other.tag == "ore")
-        {
-            //other.tag = "Collected";
         }
     }
 }

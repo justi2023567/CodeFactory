@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class OreHealth : MonoBehaviour
 {
-    public int health = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // The health for the ores (basically its hp)
+    public int health;
 }

@@ -10,7 +10,8 @@ public class FlyBotScript : MonoBehaviour
     Vector3 startPos;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         startPos = this.transform.position;
     }
 
@@ -27,7 +28,8 @@ public class FlyBotScript : MonoBehaviour
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.destination = startPos;
         }
-        else {
+        else
+        {
             foreach (GameObject t in goals)
             {
                 // Finds location of ores
@@ -41,6 +43,10 @@ public class FlyBotScript : MonoBehaviour
                     {
                         minDist = dist;
                         tMin = tt.transform;
+                        if (Vector3.Distance(transform.position, tMin.position) < 1)
+                        {
+                            this.GetComponent<NavMeshAgent>().baseOffset = 0;
+                        }
                     }
 
                 }
@@ -48,6 +54,15 @@ public class FlyBotScript : MonoBehaviour
                 NavMeshAgent agent = GetComponent<NavMeshAgent>();
                 agent.destination = tMin.position;
             }
+        }
+        // Lands when returning to start pos
+        if (Vector3.Distance(transform.position, startPos) < 1)
+        {
+            this.GetComponent<NavMeshAgent>().baseOffset = 0;
+        }
+        else
+        {
+            this.GetComponent<NavMeshAgent>().baseOffset = 60;
         }
     }
     private void OnTriggerEnter(Collider other)

@@ -10,7 +10,7 @@ public class ArmBotScript : MonoBehaviour
 
     void Update()
     {
-        if (Sphere != null)
+        if (Sphere != null && Target != null)
         {
             Sphere.transform.position = Vector3.MoveTowards(Sphere.transform.position, Target.transform.position, 0.20f);
         }

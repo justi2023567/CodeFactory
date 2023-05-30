@@ -27,7 +27,7 @@ public class OreRandomizationSystem : MonoBehaviour
         while (true)
         {
             // Tells the code to wait a bit when the function is called
-            yield return new WaitForSeconds(.3f);
+            yield return new WaitForSeconds(.05f);
 
             // Randomizes the coordinates where the ores will spawn
             var randX = Random.Range(minX, maxX);

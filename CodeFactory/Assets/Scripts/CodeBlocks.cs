@@ -30,7 +30,6 @@ public class CodeBlocks : MonoBehaviour
                 pc.playing = true;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Debug.Log("Deactivate Menu");
                 CodeBlocksMenu.SetActive(false);
                 open = false;
                 return;
@@ -40,7 +39,6 @@ public class CodeBlocks : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 pc.playing = false;
-                Debug.Log("Activate Menu");
                 CodeBlocksMenu.SetActive(true);
                 open = true;
                 return;

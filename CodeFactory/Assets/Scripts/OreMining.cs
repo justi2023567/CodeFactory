@@ -32,10 +32,10 @@ public class OreMining : MonoBehaviour
     public ParticleSystem sparks;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Destroys ore when orebot mines ore
-        if (blowup == true)
+        if (blowup == true && oreClosest == null)
         {
             // Gets Player tag to add ores to inventory
             Player = GameObject.FindGameObjectWithTag("Player");

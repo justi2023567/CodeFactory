@@ -32,7 +32,6 @@ public class CheckBlocks : MonoBehaviour
         }
         foreach (Transform child in transform)
         {
-            Debug.Log(child);
             if (child.GetComponent<BlockValue>().Value == "5")
             {
                 hasIf = true;

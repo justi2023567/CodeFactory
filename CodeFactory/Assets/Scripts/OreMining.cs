@@ -35,33 +35,15 @@ public class OreMining : MonoBehaviour
     void FixedUpdate()
     {
         // Destroys ore when orebot mines ore
-        if (blowup == true && oreClosest == null)
+        Debug.Log(blowup);
+        Debug.Log(oreClosest);
+        if (blowup == true && oreClosest != null)
         {
             // Gets Player tag to add ores to inventory
             Player = GameObject.FindGameObjectWithTag("Player");
 
             // Gets the Player's inventory by using the Player tag and assigns it as a variable
             var playerInv = Player.GetComponent<Inventory>();
-
-            // Gets ore tag to delete all items with the ore tag
-            ore = GameObject.FindGameObjectsWithTag("ore");
-
-            foreach (GameObject t in ore)
-            {
-                // Finds location of ores
-                float minDist = Mathf.Infinity;
-                Vector3 currentPos = this.transform.position;
-                foreach (GameObject tt in ore)
-                {
-                    // Finds the closest ore to the robot
-                    float dist = Vector3.Distance(tt.transform.position, currentPos);
-                    if (dist < minDist)
-                    {
-                        minDist = dist;
-                        oreClosest = tt.gameObject;
-                    }
-                }
-            }
 
             // Ore Randomization Start
             // Makes a number from 1 to 100
@@ -106,13 +88,12 @@ public class OreMining : MonoBehaviour
                     Rigidbody rb = hit.GetComponent<Rigidbody>();
 
                     // If the collider has a rigidbody, the explosion occurs
-                    if (rb != null)
+                    if (rb != null && hit.gameObject.tag == "StoneChunk")
                         rb.AddExplosionForce(power, explosionPos, radius, 1.0F); // 'power' controls the power of the explosion, 'explosionPos' sets the coordinates of the explosion, 'radius' controls the radius of the explosion, and the number controls the height of the explosion.
                 }
                 blowup = false; // Sets the blowup variable to false so the next ore can blowup
                 Destroy(cloneOreExplode, 9.25f); // Destroys the cloned ore asset after 9.25 seconds
                                                  // Replaces the destroyed ore with an ore exploding animation. Ends here.
-
             }
             else if (Time.time > nextfire)
             {

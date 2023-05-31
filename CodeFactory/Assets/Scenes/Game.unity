@@ -4634,7 +4634,7 @@ MonoBehaviour:
   collectOre: 1
   radius: 5
   power: 175
-  Player: {fileID: 0}
+  Player: {fileID: 1670497122}
   firerate: 1
   nextfire: 1
   sparks: {fileID: 5071835132905272111}

@@ -12,8 +12,6 @@ public class CodeBlocks : MonoBehaviour
 
     public bool open = false;
 
-    public bool ready = false;
-
     public CheckBlocks controller;
 
     public PlayerController pc;
@@ -22,7 +20,7 @@ public class CodeBlocks : MonoBehaviour
 
     public void Update()
     {
-        if (Time.time > nextfire && ready == true)
+        if (Time.time > nextfire)
         {
             nextfire = Time.time + firerate;
             if (Input.GetKeyDown(InteractButton) && open == true)
@@ -45,14 +43,8 @@ public class CodeBlocks : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        ready = true;
-    }
     private void OnTriggerExit(Collider other)
     {
-        ready = false;
         if (other.tag == "Bot" && controller.error == false)
         {
             other.GetComponent<WalkBotScript>().code = controller.code;

@@ -51,31 +51,29 @@ public class WalkBotScript : MonoBehaviour {
                     }
                     if (character == "3")
                     {
+                        Debug.Log(tMin);
                         if (tMin == null)
                         {
                             // Assigns all game objects with the tag "ore" as the variable "goals"
                             goals = GameObject.FindGameObjectsWithTag("ore");
 
-                            foreach (GameObject t in goals)
+                            float minDist = Mathf.Infinity;
+
+                            for (int i = 0; i < goals.Length; i++)
                             {
                                 // Finds location of ores
-                                float minDist = Mathf.Infinity;
                                 Vector3 currentPos = transform.position;
-                                foreach (GameObject tt in goals)
+                                
+                                float dist = Vector3.Distance(goals[i].transform.position, currentPos);
+                                if (dist < minDist)
                                 {
-                                    // Finds the closest ore to the robot
-                                    float dist = Vector3.Distance(tt.transform.position, currentPos);
-                                    if (dist < minDist)
-                                    {
-                                        minDist = dist;
-                                        tMin = tt.transform;
-                                    }
-
+                                    minDist = dist;
+                                    tMin = goals[i].transform;
                                 }
-                                // Moves robot to the closest ore
-                                NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                                agent.destination = tMin.position;
                             }
+                            Debug.DrawLine(this.transform.position, tMin.transform.position, Color.red, 3);
+                            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                            agent.destination = tMin.position;
                         }
                     }
                     if (character == "4")
@@ -120,8 +118,9 @@ public class WalkBotScript : MonoBehaviour {
                 nextfire = Time.time + firerate;
                 InvContaining++;
             }
-            this.GetComponent<OreMining>().blowup = true;
             this.GetComponent<OreMining>().collectOre = canStore;
+            this.GetComponent<OreMining>().blowup = true;
+            this.GetComponent<OreMining>().oreClosest = other.gameObject;
         }
     }
 }

@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class CodeBlocks : MonoBehaviour
 {
+    //Create a gameobject for the entire codeblocks menu
     public GameObject CodeBlocksMenu;
+    //Create a key code for the interact button
     public KeyCode InteractButton;
 
+    //Create floats for a timer
     public float firerate;
     public float nextfire;
 
+    //Create a bool if it is open or not
     public bool open = false;
 
+    //Continuing Tommorow
     public CheckBlocks controller;
 
     public PlayerController pc;

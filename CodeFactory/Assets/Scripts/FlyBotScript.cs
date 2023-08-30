@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class FlyBotScript : MonoBehaviour
 {
+    // needs more detailed comments
     public GameObject[] goals;
     public Transform tMin;
     Vector3 startPos;

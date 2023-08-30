@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ConBeltScript : MonoBehaviour
 {
+    // needs more detailed comments
     public float speed;
     public Vector3 direction;
     public List<GameObject> onBelt;

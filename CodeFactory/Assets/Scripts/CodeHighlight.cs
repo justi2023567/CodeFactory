@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CodeHighlight : MonoBehaviour
 {
+    // needs comments
     private string input;
 
     public void ReadStringInput(string s)

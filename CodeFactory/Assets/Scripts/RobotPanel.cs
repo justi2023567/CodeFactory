@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class RobotPanel : MonoBehaviour
 {
+    // needs comments
     public GameObject canvas;
     public GameObject console;
     public void Script()

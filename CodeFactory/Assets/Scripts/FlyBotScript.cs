@@ -5,14 +5,17 @@ using UnityEngine.AI;
 
 public class FlyBotScript : MonoBehaviour
 {
-    // needs more detailed comments
+    //Create a list of gameobjects that holds all of the "goals" (ores and targets) that the flybot uses
     public GameObject[] goals;
+    //Create a transform that holds the closest goal in goals (created previously)
     public Transform tMin;
+    //Creates a vector3 with the start position
     Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Set the vector3 startPos to the walkbots current starting position
         startPos = this.transform.position;
     }
 
@@ -25,39 +28,49 @@ public class FlyBotScript : MonoBehaviour
         // Checks if goals is 0
         if (goals.Length < 1)
         {
-            // Returns robot to starting position
+            //Get the NavMeshAgent off this object
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            //Set the NavMeshAgents target as the starting position
             agent.destination = startPos;
         }
         else
         {
+            //foreach gameobject in goals (created previously)
             foreach (GameObject t in goals)
             {
-                // Finds location of ores
+                //Creates a infinitely sized distance as a temporary value
                 float minDist = Mathf.Infinity;
+                //Finds location of the current walkbot
                 Vector3 currentPos = transform.position;
+                //foreach gameobject in goals (created previously) * loops twice to find the shortest distance out of all of the ores *
                 foreach (GameObject tt in goals)
                 {
-                    // Finds the closest ore to the robot
+                    //Sets a new variable "dist" as the Vector3's distance between a ore and the flybots current position
                     float dist = Vector3.Distance(tt.transform.position, currentPos);
+                    //If the distance between the ore and the flybot is smaller than the minimum distance
                     if (dist < minDist)
                     {
-                        // Goes down over an ore **NOT WORKING**
+                        //Set the new minimum distance to that distance
                         minDist = dist;
+                        //Set the closest transform to that ore
                         tMin = tt.transform;
+
+
+                        // * Goes down over an ore **NOT WORKING**
                         if (Vector3.Distance(transform.position, tMin.position) < 1)
                         {
                             this.GetComponent<NavMeshAgent>().baseOffset = 0;
                         }
+                        // *
                     }
-
                 }
-                // Moves robot to the closest ore
+                //Get the NavMeshAgent off this object
                 NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                //Set the NavMeshAgents target as the closest ore
                 agent.destination = tMin.position;
             }
         }
-        // Lands when returning to start pos **NOT WORKING**
+        // * Lands when returning to start pos **NOT WORKING**
         if (Vector3.Distance(transform.position, startPos) < 1)
         {
             this.GetComponent<NavMeshAgent>().baseOffset = 0;
@@ -66,5 +79,6 @@ public class FlyBotScript : MonoBehaviour
         {
             this.GetComponent<NavMeshAgent>().baseOffset = 60;
         }
+        // *
     }
 }

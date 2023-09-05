@@ -83,7 +83,7 @@ public class WalkBotScript : MonoBehaviour
                             //for all ores in goals
                             for (int i = 0; i < goals.Length; i++)
                             {
-                                //Finds location of ores
+                                //Finds location of the current walkbot
                                 Vector3 currentPos = transform.position;
 
                                 //Sets a new variable "dist" as the Vector3's distance between a ore and the walkbots current position

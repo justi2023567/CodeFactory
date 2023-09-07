@@ -35,8 +35,8 @@ public class OreMining : MonoBehaviour
     void FixedUpdate()
     {
         // Destroys ore when orebot mines ore
-        Debug.Log(blowup);
-        Debug.Log(oreClosest);
+        // Debug.Log(blowup);
+        // Debug.Log(oreClosest);
         if (blowup == true && oreClosest != null)
         {
             // Gets Player tag to add ores to inventory

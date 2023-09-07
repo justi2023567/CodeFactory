@@ -70,7 +70,7 @@ public class WalkBotScript : MonoBehaviour
                     if (character == "3")
                     {
                         //Testing: See if there is an ore already close
-                        Debug.Log(tMin);
+                        // Debug.Log(tMin);
                         //If there is no ore that is close
                         if (tMin == null)
                         {

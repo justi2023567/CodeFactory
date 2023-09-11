@@ -18,8 +18,8 @@ public class OreMining : MonoBehaviour
     public bool collectOre = false;
 
     // Variables to control the power and radius of the explosion
-    public float radius = 3f;
-    public float power = 200f;
+    public float radius = 5f;
+    public float power = 175f;
 
     // The Player object
     public GameObject Player;
@@ -35,8 +35,8 @@ public class OreMining : MonoBehaviour
     void FixedUpdate()
     {
         // Destroys ore when orebot mines ore
-        Debug.Log(blowup);
-        Debug.Log(oreClosest);
+        // Debug.Log(blowup);
+        // Debug.Log(oreClosest);
         if (blowup == true && oreClosest != null)
         {
             // Gets Player tag to add ores to inventory

@@ -68,26 +68,6 @@ public class PlayerController : MonoBehaviour
     //Create a text variable for the Camera's state on the players UI
     public Text CamText;
 
-    // If false, dialogue box is not on screen. If true, dialogue box is on screen.
-    static public bool dialogue = false;
-
-    private void update()
-    {
-        // If dialogue is not true
-        if(!dialogue)
-        {
-            // Cursor is locked and invisible
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            // Cursor is unlocked and visible
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-    }
-
     // Start is called before the first frame update
     public void Start()
     {
@@ -212,13 +192,6 @@ public class PlayerController : MonoBehaviour
                 //Enable the FreeActivate script
                 FreeActivate.enabled = true;
             }
-        }
-
-        // If dialogue is not true
-        if(!dialogue)
-        {
-            // The game is not paused
-            playing = true;
         }
     }
 }

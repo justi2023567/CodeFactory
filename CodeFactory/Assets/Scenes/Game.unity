@@ -3016,8 +3016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractButton: 102
-  d_template: {fileID: 1697857350}
-  canva: {fileID: 2070621574}
 --- !u!54 &735256493
 Rigidbody:
   m_ObjectHideFlags: 0

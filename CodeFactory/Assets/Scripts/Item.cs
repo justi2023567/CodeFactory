@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item
 {
+    // Defines a bunch of item types
     public enum ItemType
     {
         bronzePog,
@@ -11,6 +12,7 @@ public class Item : MonoBehaviour
         goldPog,
         diamondPog
     }
+    // Gets the items cost
     public static int GetCost(ItemType itemType)
     {
         switch (itemType)
@@ -22,6 +24,7 @@ public class Item : MonoBehaviour
                 case ItemType.diamondPog:   return 10000;
         }
     }
+    // Gets the items sprite
     public static Sprite GetSprite(ItemType itemType)
     {
         switch (itemType)

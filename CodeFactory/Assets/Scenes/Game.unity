@@ -812,7 +812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &247102885
 Transform:
   m_ObjectHideFlags: 0
@@ -1361,7 +1361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -335, y: 0}
+  m_AnchoredPosition: {x: -350, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &453627348
@@ -3011,6 +3011,7 @@ GameObject:
   - component: {fileID: 735256488}
   - component: {fileID: 735256493}
   - component: {fileID: 735256492}
+  - component: {fileID: 735256494}
   m_Layer: 0
   m_Name: SalesCube
   m_TagString: Untagged
@@ -3104,7 +3105,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef77ecc66c0d7b45b10f575d63c4d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI_Shop: {fileID: 1537080915}
+  pc: {fileID: 963194229}
   InteractButton: 102
+  buyButton1: 49
+  buyButton2: 50
+  buyButton3: 51
+  buyButton4: 52
+  script: {fileID: 735256494}
 --- !u!54 &735256493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3121,6 +3129,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &735256494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735256487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9466e38b58da7748bac34f0088e655a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addOresButton: 48
+  stoneCount: 0
+  coalCount: 0
+  ironCount: 0
+  goldCount: 0
+  diamondCount: 0
+  pogCount: 0
+  bronzePogCount: 0
+  silverPogCount: 0
+  goldPogCount: 0
+  diamondPogCount: 0
 --- !u!1 &745794096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5357,7 +5388,7 @@ GameObject:
   - component: {fileID: 1119134695}
   - component: {fileID: 1119134694}
   m_Layer: 0
-  m_Name: priceText
+  m_Name: costText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5379,7 +5410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: -0.00017786}
+  m_AnchoredPosition: {x: 260.25, y: -0.00017786}
   m_SizeDelta: {x: 79.5, y: 73.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119134694
@@ -5428,14 +5459,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 257
+  m_textAlignment: 260
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5534,7 +5565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: -2.15}
+  m_AnchoredPosition: {x: -134.7, y: -2.15}
   m_SizeDelta: {x: 330.6, y: 77.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119537586
@@ -7148,6 +7179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537080916}
+  - component: {fileID: 1537080917}
   m_Layer: 0
   m_Name: UI_Shop
   m_TagString: Untagged
@@ -7163,7 +7195,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537080915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000090919}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1383669828}
@@ -7172,9 +7204,21 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 347}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1537080917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537080915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167faaa9944cf1644b425789fe6eb829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543720330
 GameObject:
   m_ObjectHideFlags: 0
@@ -8039,6 +8083,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840184136}
+  - component: {fileID: 1840184137}
   m_Layer: 0
   m_Name: shopItemTemplate
   m_TagString: Untagged
@@ -8070,6 +8115,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1840184137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840184135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1842082298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8096,7 +8184,7 @@ GameObject:
   - component: {fileID: 1872899640}
   - component: {fileID: 1872899639}
   m_Layer: 0
-  m_Name: pogImage
+  m_Name: goldIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -32,6 +32,7 @@ public class Inventory : MonoBehaviour
             ironCount++;
             goldCount++;
             diamondCount++;
+            pogCount += 10000;
         }
     }
 }

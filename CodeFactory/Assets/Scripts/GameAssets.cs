@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Reflection;
 
 public class GameAssets : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameAssets : MonoBehaviour
         {
             if (_i == null)
             {
-                _i = (Instantiate(Resources.Load("GameAssets")) as GameObject).GetComponent<GameAssets>();
+                _i = Instantiate(Resources.Load<GameAssets>("GameAssets"));
             }
             return _i;
         }

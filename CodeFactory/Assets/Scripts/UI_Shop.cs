@@ -14,16 +14,19 @@ public class UI_Shop : MonoBehaviour
     {
         container = transform.Find("container"); // Grabs the refrences to our container
         shopItemTemplate = container.Find("shopItemTemplate"); // Inside our container is the refrence to the template
-        shopItemTemplate.gameObject.SetActive(false); // Starts with the template hidden
+        // shopItemTemplate.gameObject.SetActive(false); // Starts with the template hidden
     }
 
     private void Start()
     {
-        
+        CreateItemButton(Item.ItemType.bronzePog, Item.GetSprite(Item.ItemType.bronzePog), "Bronze Pog", Item.GetCost(Item.ItemType.bronzePog), 0);
+        CreateItemButton(Item.ItemType.silverPog, Item.GetSprite(Item.ItemType.silverPog), "Silver Pog", Item.GetCost(Item.ItemType.silverPog), 1);
+        CreateItemButton(Item.ItemType.goldPog, Item.GetSprite(Item.ItemType.goldPog), "Gold Pog", Item.GetCost(Item.ItemType.goldPog), 2);
+        CreateItemButton(Item.ItemType.diamondPog, Item.GetSprite(Item.ItemType.diamondPog), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPog), 3);
     }
 
     // Spawns a template with a given name, sprite, and price
-    private void CreateItemButton(Sprite itemSprite, string itemName, int itemCost, int positionIndex)
+    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
     {
         // Duplicates the item template
         Transform shopItemTransform = Instantiate(shopItemTemplate, container); // Instantiate the item template inside the container

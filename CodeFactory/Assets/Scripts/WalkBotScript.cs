@@ -12,6 +12,8 @@ public class WalkBotScript : MonoBehaviour
     //Creates a vector3 with the start position
     Vector3 startPos;
 
+    public NavMeshAgent agent;
+
     //Creates a int holding all of the objects/ores that the walkbot has mined
     public int InvContaining = 0;
 
@@ -69,11 +71,9 @@ public class WalkBotScript : MonoBehaviour
                     //If code is 3: The walkbot can break the ore
                     if (character == "3")
                     {
-                        //Testing: See if there is an ore already close
-                        // Debug.Log(tMin);
                         //If there is no ore that is close
-                        if (tMin == null)
-                        {
+                        //if (tMin == null)
+                        //{
                             //Assigns all game objects with the tag "ore" as the variable "goals"
                             goals = GameObject.FindGameObjectsWithTag("ore");
 
@@ -83,11 +83,8 @@ public class WalkBotScript : MonoBehaviour
                             //for all ores in goals
                             for (int i = 0; i < goals.Length; i++)
                             {
-                                //Finds location of the current walkbot
-                                Vector3 currentPos = transform.position;
-
                                 //Sets a new variable "dist" as the Vector3's distance between a ore and the walkbots current position
-                                float dist = Vector3.Distance(goals[i].transform.position, currentPos);
+                                float dist = Vector3.Distance(goals[i].transform.position, this.transform.position);
 
                                 //If the distance between the ore and the walkbot is smaller than the minimum distance
                                 if (dist < minDist)
@@ -100,17 +97,14 @@ public class WalkBotScript : MonoBehaviour
                             }
                             //Testing: show what it thinks the closest ore is (red line with 3 thickness)
                             Debug.DrawLine(this.transform.position, tMin.transform.position, Color.red, 3);
-                            //Get the NavMeshAgent off this object
-                            NavMeshAgent agent = GetComponent<NavMeshAgent>();
                             //Set the NavMeshAgents target as the closest ore
-                            agent.destination = tMin.position;
-                        }
+                            agent.destination = tMin.transform.position;
+                            Debug.Log(agent.destination);
+                        //}
                     }
                     //If code is 4: The walkbot can return to its original position
                     if (character == "4")
                     {
-                        //Get the NavMeshAgent off this object
-                        NavMeshAgent agent = GetComponent<NavMeshAgent>();
                         //Set the NavMeshAgent to go back to the walkbots starting position
                         agent.destination = startPos;
                     }

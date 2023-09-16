@@ -29,8 +29,9 @@ public class SalesCubeSystem : MonoBehaviour
     void Update()
     {
         // Checks if player_detection is true and if a certain key is pressed and if open is false
-        if (player_detection && Input.GetKeyDown(InteractButton) && open == false)
+        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false)
         {
+            Debug.Log("Hdhjsdhs");
             // Enables the shop
             UI_Shop.SetActive(true);
             // Sets open to true
@@ -41,11 +42,13 @@ public class SalesCubeSystem : MonoBehaviour
             Cursor.visible = true;
             // Set pc (created previously) playing to false
             pc.playing = false;
+            return;
         }
 
         // Checks if player_detection is true and if a certain key is pressed and if open is true
-        else if (player_detection && Input.GetKeyDown(InteractButton) && open)
+        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true)
         {
+            Debug.Log("Hdhjsdhs7");
             // Disables the shop
             UI_Shop.SetActive(false);
             // Sets open to false
@@ -56,27 +59,32 @@ public class SalesCubeSystem : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             // Set cursor visibility to false
             Cursor.visible = false;
+            return;
         }
 
-        if (player_detection && Input.GetKeyDown(buyButton1) && open && script.pogCount >= 10)
+        if (player_detection == true && Input.GetKeyDown(buyButton1) && open == true && script.pogCount >= 10)
         {
             script.bronzePogCount++;
             script.pogCount -= 10;
+            return;
         }
-        if (player_detection && Input.GetKeyDown(buyButton2) && open && script.pogCount >= 100)
+        if (player_detection == true && Input.GetKeyDown(buyButton2) && open == true && script.pogCount >= 100)
         {
             script.silverPogCount++;
             script.pogCount -= 100;
+            return;
         }
-        if (player_detection && Input.GetKeyDown(buyButton3) && open && script.pogCount >= 1000)
+        if (player_detection == true && Input.GetKeyDown(buyButton3) && open == true && script.pogCount >= 1000)
         {
             script.goldPogCount++;
             script.pogCount -= 1000;
+            return;
         }
-        if (player_detection && Input.GetKeyDown(buyButton4) && open && script.pogCount >= 10000)
+        if (player_detection == true && Input.GetKeyDown(buyButton4) && open == true && script.pogCount >= 10000)
         {
             script.diamondPogCount++;
             script.pogCount -= 10000;
+            return;
         }
     }
 

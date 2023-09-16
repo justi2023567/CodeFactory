@@ -55,11 +55,15 @@ public class FlyBotScript : MonoBehaviour
                         //Set the closest transform to that ore
                         tMin = tt.transform;
 
-
                         // * Goes down over an ore **NOT WORKING**
-                        if (Vector3.Distance(transform.position, tMin.position) < 1)
+                        if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.y), new Vector3(tMin.position.x, 0, tMin.position.y)) <= 3.48)
                         {
+                            //Debug.Log("Working");
                             this.GetComponent<NavMeshAgent>().baseOffset = 0;
+                        }
+                        else
+                        {
+                            this.GetComponent<NavMeshAgent>().baseOffset = 60;
                         }
                         // *
                     }
@@ -70,15 +74,17 @@ public class FlyBotScript : MonoBehaviour
                 agent.destination = tMin.position;
             }
         }
-        // * Lands when returning to start pos **NOT WORKING**
-        if (Vector3.Distance(transform.position, startPos) < 1)
+    }
+    //If another object collides with the walkbot
+    public void OnTriggerEnter(Collider other)
+    {
+        //Blows up the ore using the ore tag, and the walkbot can mine
+        if (other.tag == "ore")
         {
-            this.GetComponent<NavMeshAgent>().baseOffset = 0;
+            //Get the other script on this object and set blowup to be true
+            this.GetComponent<OreMining>().blowup = true;
+            //Get the other script on this object and set the closest ore to be the ore that was just mined
+            this.GetComponent<OreMining>().oreClosest = other.gameObject;
         }
-        else
-        {
-            this.GetComponent<NavMeshAgent>().baseOffset = 60;
-        }
-        // *
     }
 }

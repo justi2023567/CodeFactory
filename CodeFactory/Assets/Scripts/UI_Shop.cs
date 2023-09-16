@@ -24,8 +24,6 @@ public class UI_Shop : MonoBehaviour
         CreateItemButton(Item.ItemType.silverPog, Item.GetSprite(Item.ItemType.silverPog), "Silver Pog", Item.GetCost(Item.ItemType.silverPog), 1);
         CreateItemButton(Item.ItemType.goldPog, Item.GetSprite(Item.ItemType.goldPog), "Gold Pog", Item.GetCost(Item.ItemType.goldPog), 2);
         CreateItemButton(Item.ItemType.diamondPog, Item.GetSprite(Item.ItemType.diamondPog), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPog), 3);
-
-        Hide();
     }
 
     // Spawns a template with a given name, sprite, and price
@@ -42,9 +40,5 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("nameText").GetComponent<TextMeshProUGUI>().SetText(itemName); // Sets the item name
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString()); // Sets the cost text
         shopItemTransform.Find("itemImage").GetComponent<Image>().sprite = itemSprite; // Sets the item image
-    }
-    public void Hide()
-    {
-        gameObject.SetActive(false);
     }
 }

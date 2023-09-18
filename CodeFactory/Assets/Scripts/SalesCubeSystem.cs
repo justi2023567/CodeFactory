@@ -31,7 +31,6 @@ public class SalesCubeSystem : MonoBehaviour
         // Checks if player_detection is true and if a certain key is pressed and if open is false
         if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false)
         {
-            Debug.Log("Hdhjsdhs");
             // Enables the shop
             UI_Shop.SetActive(true);
             // Sets open to true
@@ -48,7 +47,6 @@ public class SalesCubeSystem : MonoBehaviour
         // Checks if player_detection is true and if a certain key is pressed and if open is true
         if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true)
         {
-            Debug.Log("Hdhjsdhs7");
             // Disables the shop
             UI_Shop.SetActive(false);
             // Sets open to false

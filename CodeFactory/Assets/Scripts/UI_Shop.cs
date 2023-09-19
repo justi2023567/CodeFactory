@@ -9,7 +9,6 @@ public class UI_Shop : MonoBehaviour
     // Info for Transform at https://docs.unity3d.com/ScriptReference/Transform.html
     private Transform container; // Gets the Transform for container
     private Transform shopItemTemplate; // Gets the Transform for shopItemTemplate
-    private IShopCustomer shopCustomer;
 
     private void Awake()
     {
@@ -20,14 +19,20 @@ public class UI_Shop : MonoBehaviour
     // Dynamically creates a new item in the shop
     private void Start()
     {
-        CreateItemButton(Item.ItemType.bronzePog, Item.GetSprite(Item.ItemType.bronzePog), "Bronze Pog", Item.GetCost(Item.ItemType.bronzePog), 0);
-        CreateItemButton(Item.ItemType.silverPog, Item.GetSprite(Item.ItemType.silverPog), "Silver Pog", Item.GetCost(Item.ItemType.silverPog), 1);
-        CreateItemButton(Item.ItemType.goldPog, Item.GetSprite(Item.ItemType.goldPog), "Gold Pog", Item.GetCost(Item.ItemType.goldPog), 2);
-        CreateItemButton(Item.ItemType.diamondPog, Item.GetSprite(Item.ItemType.diamondPog), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPog), 3);
+        CreateItemButton(Item.ItemType.bronzePogForPogs, Item.GetSprite(Item.ItemType.bronzePogForPogs), "Bronze Pog", Item.GetCost(Item.ItemType.bronzePogForPogs), GameAssets.i.pog, 0);
+        CreateItemButton(Item.ItemType.silverPogForPogs, Item.GetSprite(Item.ItemType.silverPogForPogs), "Silver Pog", Item.GetCost(Item.ItemType.silverPogForPogs), GameAssets.i.pog, 1);
+        CreateItemButton(Item.ItemType.silverPogForBronzePogs, Item.GetSprite(Item.ItemType.silverPogForBronzePogs), "Silver Pog", Item.GetCost(Item.ItemType.silverPogForBronzePogs), GameAssets.i.bronzePog, 2);
+        CreateItemButton(Item.ItemType.goldPogForPogs, Item.GetSprite(Item.ItemType.goldPogForPogs), "Gold Pog", Item.GetCost(Item.ItemType.goldPogForPogs), GameAssets.i.pog, 3);
+        CreateItemButton(Item.ItemType.goldPogForBronzePogs, Item.GetSprite(Item.ItemType.goldPogForBronzePogs), "Gold Pog", Item.GetCost(Item.ItemType.goldPogForBronzePogs), GameAssets.i.bronzePog, 4);
+        CreateItemButton(Item.ItemType.goldPogForSilverPogs, Item.GetSprite(Item.ItemType.goldPogForSilverPogs), "Gold Pog", Item.GetCost(Item.ItemType.goldPogForSilverPogs), GameAssets.i.silverPog, 5);
+        CreateItemButton(Item.ItemType.diamondPogForPogs, Item.GetSprite(Item.ItemType.diamondPogForPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForPogs), GameAssets.i.pog, 6);
+        CreateItemButton(Item.ItemType.diamondPogForBronzePogs, Item.GetSprite(Item.ItemType.diamondPogForBronzePogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForBronzePogs), GameAssets.i.bronzePog, 7);
+        CreateItemButton(Item.ItemType.diamondPogForSilverPogs, Item.GetSprite(Item.ItemType.diamondPogForSilverPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForSilverPogs), GameAssets.i.silverPog, 8);
+        CreateItemButton(Item.ItemType.diamondPogForGoldPogs, Item.GetSprite(Item.ItemType.diamondPogForGoldPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForGoldPogs), GameAssets.i.goldPog, 9);
     }
 
     // Spawns a template with a given name, sprite, and price
-    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
+    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, Sprite currencySprite, int positionIndex)
     {
         // Duplicates the item template
         Transform shopItemTransform = Instantiate(shopItemTemplate, container); // Instantiate the item template inside the container
@@ -40,5 +45,6 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("nameText").GetComponent<TextMeshProUGUI>().SetText(itemName); // Sets the item name
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString()); // Sets the cost text
         shopItemTransform.Find("itemImage").GetComponent<Image>().sprite = itemSprite; // Sets the item image
+        shopItemTransform.Find("currencyImage").GetComponent<Image>().sprite = currencySprite; // Sets the currency image
     }
 }

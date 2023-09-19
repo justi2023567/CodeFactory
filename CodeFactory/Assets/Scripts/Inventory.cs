@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
 
     public void FixedUpdate()
     {
-        // Gives 1 of every ore to test the selling system (DEV ONLY)
+        // Gives 1 of every ore and 10,000 pogs to test the selling system (DEV ONLY)
         if (Input.GetKeyDown(addOresButton))
         {
             stoneCount++;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9051482793227874659}
   - component: {fileID: -4661629614611016741}
   - component: {fileID: 8355207647066490351}
+  - component: {fileID: -3562063368714491383}
   m_Layer: 0
   m_Name: Cube
   m_TagString: ore
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051482793227874658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17, y: 0.63, z: 8.187}
+  m_LocalPosition: {x: -0.17, y: -0.937, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,3 +125,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-3562063368714491383
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051482793227874658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2425108
+  m_Center: {x: -0.21606374, y: 0.36794424, z: 0}

@@ -27,6 +27,7 @@ public class WalkBotScript : MonoBehaviour
 
     //Create bools dependent on the code (created previously) on if the walkbot can mine, store, or return its previous position
     public bool canMine = false;
+
     public bool canStore = false;
     public bool returnon = false;
 
@@ -38,7 +39,8 @@ public class WalkBotScript : MonoBehaviour
     public int invFullState = 0;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         //Set the vector3 startPos to the walkbots current starting position
         startPos = this.transform.position;
         othersrobots = GameObject.FindGameObjectsWithTag("Bot");
@@ -82,7 +84,7 @@ public class WalkBotScript : MonoBehaviour
                         {
                             //change to float
                             float robotsnum = 0;
-                            
+
                             for (var i = othersrobots.Length - 1; i >= 0; i--)
                             {
                                 if (othersrobots[i].transform.root.gameObject != this.transform.root.gameObject)
@@ -189,23 +191,33 @@ public class WalkBotScript : MonoBehaviour
     //If another object collides with the walkbot
     private void OnTriggerEnter(Collider other)
     {
-        //Blows up the ore using the ore tag, and the walkbot can mine
-        if (other.tag == "ore" && canMine == true && Vector3.Distance(new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z), new Vector3(agent.destination.x, 0, agent.destination.z)) <= 1)
+
+        FixedUpdate();
+        void FixedUpdate()
         {
-            //If the walkbot can store objects, and the timer has run out
-            if (canStore == true && Time.time > nextfire)
+            //Blows up the ore using the ore tag, and the walkbot can mine
+            if (other.tag == "ore" && canMine == true && Vector3.Distance(new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z), new Vector3(agent.destination.x, 0, agent.destination.z)) <= 1)
             {
-                //Reset timer
-                nextfire = Time.time + firerate;
-                //Add 1 to the int holding the objects the walkbot has mined
-                InvContaining++;
+                //If the walkbot can store objects, and the timer has run out
+                if (canStore == true && Time.time > nextfire)
+                {
+                    //Reset timer
+                    nextfire = Time.time + firerate;
+                    //Add 1 to the int holding the objects the walkbot has mined
+                    InvContaining++;
+                }
+                //Get the other script on this object and set collect ore to can stores value
+                this.GetComponent<OreMining>().collectOre = canStore;
+                //Get the other script on this object and set blowup to be true
+                this.GetComponent<OreMining>().blowup = true;
+                //Get the other script on this object and set the closest ore to be the ore that was just mined
+                this.GetComponent<OreMining>().oreClosest = other.gameObject;
             }
-            //Get the other script on this object and set collect ore to can stores value
-            this.GetComponent<OreMining>().collectOre = canStore;
-            //Get the other script on this object and set blowup to be true
-            this.GetComponent<OreMining>().blowup = true;
-            //Get the other script on this object and set the closest ore to be the ore that was just mined
-            this.GetComponent<OreMining>().oreClosest = other.gameObject;
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+
+        this.GetComponent<OreMining>().blowup = false;
     }
 }

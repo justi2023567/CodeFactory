@@ -13,7 +13,7 @@ public class OreMining : MonoBehaviour
 
     // Variable to tell if the ore has blown up or not
     public bool blowup = false;
-
+    public bool ore_detection = false;
     // Variables to tell if the ore has been collected
     public bool collectOre = false;
 
@@ -32,8 +32,12 @@ public class OreMining : MonoBehaviour
     public ParticleSystem sparks;
 
     // Update is called once per frame
-    void FixedUpdate()
+
+
+     void FixedUpdate()
     {
+
+
         // Destroys ore when orebot mines ore
         // Debug.Log(blowup);
         // Debug.Log(oreClosest);
@@ -80,7 +84,7 @@ public class OreMining : MonoBehaviour
                 Vector3 explosionPos = oreClosest.gameObject.transform.position; // Sets the coordinates of the explosion
                 Collider[] colliders = Physics.OverlapSphere(explosionPos, radius); //Finds every collider in a radius
                                                                                     // Loops through all the colliders
-                // Destroys the ore
+                                                                                    // Destroys the ore
                 Destroy(oreClosest.gameObject);
                 foreach (Collider hit in colliders)
                 {
@@ -104,5 +108,8 @@ public class OreMining : MonoBehaviour
                 oreClosest.GetComponent<OreHealth>().health--;
             }
         }
+
     }
+
 }
+

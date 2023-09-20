@@ -7,6 +7,7 @@ public class WalkBotScript : MonoBehaviour
 {
     //Create a list of gameobjects that holds all of the "goals" (ores and targets) that the walkbot uses
     public GameObject[] goals;
+
     //Create a transform that holds the closest goal in goals (created previously)
     public Transform tMin;
     //Creates a vector3 with the start position
@@ -14,8 +15,12 @@ public class WalkBotScript : MonoBehaviour
 
     public NavMeshAgent agent;
 
+    public GameObject currentTarget;
+
     //Creates a int holding all of the objects/ores that the walkbot has mined
     public int InvContaining = 0;
+
+    public GameObject[] othersrobots;
 
     //Create a string that will hold the "code" of the walkbot (inputed on the players side then applied to this)
     public string code = "";
@@ -36,6 +41,7 @@ public class WalkBotScript : MonoBehaviour
     void Start() {
         //Set the vector3 startPos to the walkbots current starting position
         startPos = this.transform.position;
+        othersrobots = GameObject.FindGameObjectsWithTag("Bot");
     }
 
     // Update is called once per frame
@@ -72,35 +78,25 @@ public class WalkBotScript : MonoBehaviour
                     if (character == "3")
                     {
                         //If there is no ore that is close
-                        //if (tMin == null)
-                        //{
-                            //Assigns all game objects with the tag "ore" as the variable "goals"
-                            goals = GameObject.FindGameObjectsWithTag("ore");
-
-                            //Creates a infinitely sized distance as a temporary value
-                            float minDist = Mathf.Infinity;
-
-                            //for all ores in goals
-                            for (int i = 0; i < goals.Length; i++)
+                        if (tMin == null)
+                        {
+                            //change to float
+                            float robotsnum = 0;
+                            
+                            for (var i = othersrobots.Length - 1; i >= 0; i--)
                             {
-                                //Sets a new variable "dist" as the Vector3's distance between a ore and the walkbots current position
-                                float dist = Vector3.Distance(goals[i].transform.position, this.transform.position);
-
-                                //If the distance between the ore and the walkbot is smaller than the minimum distance
-                                if (dist < minDist)
+                                if (othersrobots[i].transform.root.gameObject != this.transform.root.gameObject)
                                 {
-                                    //Set the new minimum distance to that distance
-                                    minDist = dist;
-                                    //Set the closest transform to that ore
-                                    tMin = goals[i].transform;
+                                    robotsnum = i;
+                                    Debug.Log(robotsnum + " initial");
+                                    robotsnum /= 100;
+                                    Debug.Log(robotsnum + " final");
                                 }
                             }
-                            //Testing: show what it thinks the closest ore is (red line with 3 thickness)
-                            Debug.DrawLine(this.transform.position, tMin.transform.position, Color.red, 3);
-                            //Set the NavMeshAgents target as the closest ore
-                            agent.destination = tMin.transform.position;
-                            Debug.Log(agent.destination);
-                        //}
+                            StopCoroutine(Char3(robotsnum));
+
+                            StartCoroutine(Char3(robotsnum));
+                        }
                     }
                     //If code is 4: The walkbot can return to its original position
                     if (character == "4")
@@ -137,11 +133,64 @@ public class WalkBotScript : MonoBehaviour
         }
         */
     }
+
+    //change to float
+    public IEnumerator Char3(float num)
+    {
+        yield return new WaitForSeconds(num);
+        Debug.Log("It has been " + num + " second/s");
+
+        //Assigns all game objects with the tag "ore" as the variable "goals"
+        goals = GameObject.FindGameObjectsWithTag("ore");
+
+        //Creates a infinitely sized distance as a temporary value
+        float minDist = Mathf.Infinity;
+
+        //for all ores in goals
+        for (int i = 0; i < goals.Length; i++)
+        {
+            //Sets a new variable "dist" as the Vector3's distance between a ore and the walkbots current position
+            float dist = Vector3.Distance(goals[i].transform.position, this.transform.position);
+
+            //If the distance between the ore and the walkbot is smaller than the minimum distance
+            if (dist < minDist)
+            {
+                var othersgoals = GameObject.FindGameObjectsWithTag("Bot");
+
+                for (var k = othersgoals.Length - 1; k >= 0; k--)
+                {
+                    //Debug.Log(Vector3.Distance(goals[i].gameObject.transform.position, othersgoals[k].GetComponent<NavMeshAgent>().destination) > .5f);
+
+                    if (goals[i].gameObject != othersgoals[k].GetComponent<WalkBotScript>().currentTarget)
+                    {
+                        //Set the new minimum distance to that distance
+                        minDist = dist;
+                        //Set the closest transform to that ore
+                        tMin = goals[i].transform;
+                    }
+                    else
+                    {
+                        //goalsList[i].GetComponent<OreHealth>().picked = true;
+                        Debug.Log("was less than 1");
+                        break;
+                    }
+                }
+            }
+        }
+        if (tMin != null)
+        {
+            //Testing: show what it thinks the closest ore is (red line with 3 thickness)
+            Debug.DrawLine(this.transform.position, tMin.transform.position, Color.red, 3);
+            //Set the NavMeshAgents target as the closest ore
+            agent.destination = tMin.transform.position;
+            currentTarget = tMin.gameObject;
+        }
+    }
     //If another object collides with the walkbot
     private void OnTriggerEnter(Collider other)
     {
         //Blows up the ore using the ore tag, and the walkbot can mine
-        if (other.tag == "ore" && canMine == true)
+        if (other.tag == "ore" && canMine == true && Vector3.Distance(new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z), new Vector3(agent.destination.x, 0, agent.destination.z)) <= 1)
         {
             //If the walkbot can store objects, and the timer has run out
             if (canStore == true && Time.time > nextfire)

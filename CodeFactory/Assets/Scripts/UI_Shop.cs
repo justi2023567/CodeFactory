@@ -7,12 +7,18 @@ using TMPro;
 public class UI_Shop : MonoBehaviour
 {
     // Info for Transform at https://docs.unity3d.com/ScriptReference/Transform.html
+    private Transform scrollArea;
+    private Transform scroll;
     private Transform container; // Gets the Transform for container
     private Transform shopItemTemplate; // Gets the Transform for shopItemTemplate
 
+    public GameObject shopItemTemplateObject;
+
     private void Awake()
     {
-        container = transform.Find("container"); // Grabs the refrences to our container
+        scrollArea = transform.Find("scrollArea"); // Grabs the refrences to our scrollArea
+        scroll = scrollArea.Find("scroll"); // Inside our scrollArea is the refrence to the scroll
+        container = scroll.Find("container"); // Inside our scroll is the refrence to the container
         shopItemTemplate = container.Find("shopItemTemplate"); // Inside our container is the refrence to the template
     }
 
@@ -29,6 +35,8 @@ public class UI_Shop : MonoBehaviour
         CreateItemButton(Item.ItemType.diamondPogForBronzePogs, Item.GetSprite(Item.ItemType.diamondPogForBronzePogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForBronzePogs), GameAssets.i.bronzePog, 7);
         CreateItemButton(Item.ItemType.diamondPogForSilverPogs, Item.GetSprite(Item.ItemType.diamondPogForSilverPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForSilverPogs), GameAssets.i.silverPog, 8);
         CreateItemButton(Item.ItemType.diamondPogForGoldPogs, Item.GetSprite(Item.ItemType.diamondPogForGoldPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForGoldPogs), GameAssets.i.goldPog, 9);
+
+        shopItemTemplateObject.SetActive(false);
     }
 
     // Spawns a template with a given name, sprite, and price
@@ -38,7 +46,7 @@ public class UI_Shop : MonoBehaviour
         Transform shopItemTransform = Instantiate(shopItemTemplate, container); // Instantiate the item template inside the container
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>(); // Grabs the RectTransform of shopItemTransform (Info for RectTransform at https://docs.unity3d.com/ScriptReference/RectTransform.html)
 
-        float shopItemHeight = 150f;
+        float shopItemHeight = 170f;
         // Modifies the anchored position by a certain item height multiplied by the index
         shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
 

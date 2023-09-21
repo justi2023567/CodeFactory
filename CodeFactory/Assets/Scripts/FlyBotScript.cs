@@ -63,7 +63,7 @@ public class FlyBotScript : MonoBehaviour
                         }
                         else
                         {
-                            this.GetComponent<NavMeshAgent>().baseOffset = 60;
+                            this.GetComponent<NavMeshAgent>().baseOffset = 40;
                         }
                         // *
                     }

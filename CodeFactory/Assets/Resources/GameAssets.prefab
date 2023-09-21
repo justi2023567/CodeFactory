@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c859721b95ba59d4d8c79bf2cdfd1fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pog: {fileID: 21300000, guid: 59e2d0490b993cf4aa681b665e468734, type: 3}
   bronzePog: {fileID: 21300000, guid: 3ddd01d959beff84f9c16118605c3d38, type: 3}
   silverPog: {fileID: 21300000, guid: 0992ea52c2de5cf4bb48a27465498853, type: 3}
   goldPog: {fileID: 21300000, guid: f9eea4a091af4514f837d9f914375c3e, type: 3}

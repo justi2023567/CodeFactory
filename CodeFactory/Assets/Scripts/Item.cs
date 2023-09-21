@@ -7,10 +7,16 @@ public class Item
     // Defines a bunch of item types
     public enum ItemType
     {
-        bronzePog,
-        silverPog,
-        goldPog,
-        diamondPog
+        bronzePogForPogs,
+        silverPogForPogs,
+        silverPogForBronzePogs,
+        goldPogForPogs,
+        goldPogForBronzePogs,
+        goldPogForSilverPogs,
+        diamondPogForPogs,
+        diamondPogForBronzePogs,
+        diamondPogForSilverPogs,
+        diamondPogForGoldPogs
     }
     // Gets the items cost
     public static int GetCost(ItemType itemType)
@@ -18,10 +24,16 @@ public class Item
         switch (itemType)
         {
             default:
-                case ItemType.bronzePog:    return 10;
-                case ItemType.silverPog:    return 100;
-                case ItemType.goldPog:      return 1000;
-                case ItemType.diamondPog:   return 10000;
+                case ItemType.bronzePogForPogs:         return 10;
+                case ItemType.silverPogForPogs:         return 100;
+                case ItemType.silverPogForBronzePogs:   return 10;
+                case ItemType.goldPogForPogs:           return 1000;
+                case ItemType.goldPogForBronzePogs:     return 100;
+                case ItemType.goldPogForSilverPogs:     return 10;
+                case ItemType.diamondPogForPogs:        return 10000;
+                case ItemType.diamondPogForBronzePogs:  return 1000;
+                case ItemType.diamondPogForSilverPogs:  return 100;
+                case ItemType.diamondPogForGoldPogs:    return 10;
         }
     }
     // Gets the items sprite
@@ -30,10 +42,16 @@ public class Item
         switch (itemType)
         {
             default:
-                case ItemType.bronzePog:    return GameAssets.i.bronzePog;
-                case ItemType.silverPog:    return GameAssets.i.silverPog;
-                case ItemType.goldPog:      return GameAssets.i.goldPog;
-                case ItemType.diamondPog:   return GameAssets.i.diamondPog;
+                case ItemType.bronzePogForPogs:         return GameAssets.i.bronzePog;
+                case ItemType.silverPogForPogs:         return GameAssets.i.silverPog;
+                case ItemType.silverPogForBronzePogs:   return GameAssets.i.silverPog;
+                case ItemType.goldPogForPogs:           return GameAssets.i.goldPog;
+                case ItemType.goldPogForBronzePogs:     return GameAssets.i.goldPog;
+                case ItemType.goldPogForSilverPogs:     return GameAssets.i.goldPog;
+                case ItemType.diamondPogForPogs:        return GameAssets.i.diamondPog;
+                case ItemType.diamondPogForBronzePogs:  return GameAssets.i.diamondPog;
+                case ItemType.diamondPogForSilverPogs:  return GameAssets.i.diamondPog;
+                case ItemType.diamondPogForGoldPogs:    return GameAssets.i.diamondPog;
         }
     }
 }

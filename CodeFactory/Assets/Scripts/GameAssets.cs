@@ -20,6 +20,7 @@ public class GameAssets : MonoBehaviour
         }
     }
 
+    public Sprite pog;
     public Sprite bronzePog;
     public Sprite silverPog;
     public Sprite goldPog;

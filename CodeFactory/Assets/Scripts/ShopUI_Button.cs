@@ -12,6 +12,7 @@ public class ShopUI_Button : MonoBehaviour
 
     public GameObject changingText;
 
+    // Function used to check if the button was clicked
     public void buttonClicked()
     {
         // Checks if the index is the same as the index that you clicked and if you have enough of the currency to buy the item
@@ -77,8 +78,10 @@ public class ShopUI_Button : MonoBehaviour
         }
     }
 
+    // Function used to check if the mouse is hovering on top of the item
     public void onHover()
     {
+        // If the index is the same as the index you are hovering over, the description gets changed to the description of that item
         if (index == 0)
         {
             changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Bronze Pog.";
@@ -131,8 +134,10 @@ public class ShopUI_Button : MonoBehaviour
         }
     }
 
+    // Function used to check if the mouse is no longer hovering over 
     public void exitHover()
     {
+        // Changes the description to the placeholder
         changingText.GetComponent<TextMeshProUGUI>().text = "Nothing...";
         return;
     }

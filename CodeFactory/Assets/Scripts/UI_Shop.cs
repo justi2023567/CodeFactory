@@ -7,8 +7,8 @@ using TMPro;
 public class UI_Shop : MonoBehaviour
 {
     // Info for Transform at https://docs.unity3d.com/ScriptReference/Transform.html
-    private Transform scrollArea;
-    private Transform scroll;
+    private Transform scrollArea; // Gets the Transform for scrollArea
+    private Transform scroll; // Gets the Transform for scroll
     private Transform container; // Gets the Transform for container
     private Transform shopItemTemplate; // Gets the Transform for shopItemTemplate
 
@@ -54,5 +54,7 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString()); // Sets the cost text
         shopItemTransform.Find("itemImage").GetComponent<Image>().sprite = itemSprite; // Sets the item image
         shopItemTransform.Find("currencyImage").GetComponent<Image>().sprite = currencySprite; // Sets the currency image
+
+        shopItemTransform.gameObject.GetComponentInChildren<ShopUI_Button>().index = positionIndex;
     }
 }

@@ -5,8 +5,10 @@ using TMPro;
 
 public class SalesCubeSystem : MonoBehaviour
 {
+    // Creates a GameObject called UI_Shop and it is assigned with the UI_Shop script through Unity
     public GameObject UI_Shop;
 
+    // Creates a PlayerController named pc and it is assigned with the PlayerController script through Unity
     public PlayerController pc;
 
     // Creates a keycode for the interact button

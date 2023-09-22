@@ -12,19 +12,6 @@ public class SalesCubeSystem : MonoBehaviour
     // Creates a keycode for the interact button
     public KeyCode InteractButton;
 
-    public KeyCode buyButton1;
-    public KeyCode buyButton2;
-    public KeyCode buyButton3;
-    public KeyCode buyButton4;
-    public KeyCode buyButton5;
-    public KeyCode buyButton6;
-    public KeyCode buyButton7;
-    public KeyCode buyButton8;
-    public KeyCode buyButton9;
-    public KeyCode buyButton10;
-
-    public Inventory script;
-
     // Variable used to detect the player
     bool player_detection = false;
 
@@ -63,68 +50,6 @@ public class SalesCubeSystem : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             // Set cursor visibility to false
             Cursor.visible = false;
-            return;
-        }
-
-        // Checks if player_detection is true and the correct button is pressed down and you meet the requirements to buy the item
-        if (player_detection == true && Input.GetKeyDown(buyButton1) && open == true && script.pogCount >= 10)
-        {
-            script.bronzePogCount++;
-            script.pogCount -= 10;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton2) && open == true && script.pogCount >= 100)
-        {
-            script.silverPogCount++;
-            script.pogCount -= 100;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton3) && open == true && script.bronzePogCount >= 10)
-        {
-            script.silverPogCount++;
-            script.bronzePogCount -= 10;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton4) && open == true && script.pogCount >= 1000)
-        {
-            script.goldPogCount++;
-            script.pogCount -= 1000;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton5) && open == true && script.bronzePogCount >= 100)
-        {
-            script.goldPogCount++;
-            script.bronzePogCount -= 100;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton6) && open == true && script.silverPogCount >= 10)
-        {
-            script.goldPogCount++;
-            script.silverPogCount -= 10;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton7) && open == true && script.pogCount >= 10000)
-        {
-            script.diamondPogCount++;
-            script.pogCount -= 10000;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton8) && open == true && script.bronzePogCount >= 1000)
-        {
-            script.diamondPogCount++;
-            script.bronzePogCount -= 1000;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton9) && open == true && script.silverPogCount >= 100)
-        {
-            script.diamondPogCount++;
-            script.silverPogCount -= 100;
-            return;
-        }
-        if (player_detection == true && Input.GetKeyDown(buyButton10) && open == true && script.goldPogCount >= 10)
-        {
-            script.diamondPogCount++;
-            script.goldPogCount -= 10;
             return;
         }
     }

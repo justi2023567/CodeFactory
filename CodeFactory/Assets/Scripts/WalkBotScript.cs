@@ -12,6 +12,8 @@ public class WalkBotScript : MonoBehaviour
     public Transform tMin;
     //Creates a vector3 with the start position
     Vector3 startPos;
+    
+    
 
     public NavMeshAgent agent;
 

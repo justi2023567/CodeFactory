@@ -36,8 +36,6 @@ public class OreMining : MonoBehaviour
 
      void FixedUpdate()
     {
-
-
         // Destroys ore when orebot mines ore
         // Debug.Log(blowup);
         // Debug.Log(oreClosest);

@@ -4065,6 +4065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI_Shop: {fileID: 1537080915}
+  UI_Icons: {fileID: 670434645}
   pc: {fileID: 963194229}
   InteractButton: 102
 --- !u!54 &735256493
@@ -7473,7 +7474,7 @@ GameObject:
   - component: {fileID: 1375515018}
   - component: {fileID: 1375515017}
   m_Layer: 0
-  m_Name: inventoryIconBackground
+  m_Name: buildingIconBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7497,7 +7498,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -955, y: -424}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375515017
 MonoBehaviour:
@@ -9490,7 +9491,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -955, y: -424}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613774039
 MonoBehaviour:
@@ -10187,7 +10188,7 @@ RectTransform:
   m_GameObject: {fileID: 1692066299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.9988592, y: 0.99885964, z: 0.99885964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1999036632}
   m_Father: {fileID: 670434646}
@@ -10195,7 +10196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 0}
+  m_AnchoredPosition: {x: 150, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1712639196
@@ -10208,7 +10209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712639197}
   m_Layer: 0
-  m_Name: inventoryIcon (1)
+  m_Name: buildingIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10223,7 +10224,7 @@ RectTransform:
   m_GameObject: {fileID: 1712639196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9988592, y: 0.9988596, z: 0.9988596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1375515016}
   m_Father: {fileID: 670434646}
@@ -10231,7 +10232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -0.00018262863}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1713416935
@@ -11684,7 +11685,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -955, y: -424}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999036633
 MonoBehaviour:
@@ -11881,7 +11882,7 @@ GameObject:
   - component: {fileID: 2062377305}
   - component: {fileID: 2062377304}
   m_Layer: 0
-  m_Name: inventoryIcon
+  m_Name: buildingIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11924,7 +11925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4884d3668e2a61498308ba36cd50320, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01197f4cb5325e943a9c80f33ae1cac7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

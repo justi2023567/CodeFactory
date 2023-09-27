@@ -219,7 +219,6 @@ public class WalkBotScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-
         this.GetComponent<OreMining>().blowup = false;
     }
 }

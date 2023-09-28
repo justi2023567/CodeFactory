@@ -10801,7 +10801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197acdf03273c8841853841f9147303e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomOrePrefab: {fileID: 5518004481137635715, guid: a879005595e708b4da5ca1c888acd560,
+  randomOrePrefab: {fileID: 9051482793227874658, guid: 581b84914a091994081c784aec7aed5a,
     type: 3}
   minX: -100
   maxX: 100

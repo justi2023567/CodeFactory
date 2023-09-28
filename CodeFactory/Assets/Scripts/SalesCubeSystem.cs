@@ -8,6 +8,8 @@ public class SalesCubeSystem : MonoBehaviour
     // Creates a GameObject called UI_Shop and it is assigned with the UI_Shop script through Unity
     public GameObject UI_Shop;
 
+    public GameObject UI_Icons;
+
     // Creates a PlayerController named pc and it is assigned with the PlayerController script through Unity
     public PlayerController pc;
 
@@ -26,6 +28,8 @@ public class SalesCubeSystem : MonoBehaviour
         // Checks if player_detection is true and if a certain key is pressed and if open is false
         if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false)
         {
+            // Disables the UI_Icons
+            UI_Icons.SetActive(false);
             // Enables the shop
             UI_Shop.SetActive(true);
             // Sets open to true
@@ -42,6 +46,8 @@ public class SalesCubeSystem : MonoBehaviour
         // Checks if player_detection is true and if a certain key is pressed and if open is true
         if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true)
         {
+            // Disables the UI_Icons
+            UI_Icons.SetActive(true);
             // Disables the shop
             UI_Shop.SetActive(false);
             // Sets open to false
@@ -73,6 +79,7 @@ public class SalesCubeSystem : MonoBehaviour
         // Changes player_detection to false
         player_detection = false;
 
+        UI_Icons.SetActive(true);
         UI_Shop.SetActive(false);
         open = false;
     }

@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     //Create a gameobject for the entire inventory menu
     public GameObject InventoryMenu;
 
+    public GameObject UI_Icons;
+
     //Create a event for when a key is pressed
     public Event keyHappen;
 
@@ -91,6 +93,8 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             //Make the players cursor visible
             Cursor.visible = true;
+            // Disables the UI Icons
+            UI_Icons.SetActive(false);
             //Activate the settings menu to show up for the player
             SettingsMenu.SetActive(true);
             //Return to leave the void instead of running the code below
@@ -101,6 +105,8 @@ public class PlayerController : MonoBehaviour
         {
             //Player isn't in the pause menu now, set playing to true
             playing = true;
+            // Enables the UI Icons
+            UI_Icons.SetActive(true);
             //Deactivate the settings menu and put the player back into the game
             SettingsMenu.SetActive(false);
             //Return to leave the void instead of running the code above

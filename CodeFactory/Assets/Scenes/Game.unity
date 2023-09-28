@@ -5418,6 +5418,7 @@ MonoBehaviour:
   ttf: {x: 0, y: 0, z: 0, w: 0}
   SettingsMenu: {fileID: 1975496670}
   InventoryMenu: {fileID: 0}
+  UI_Icons: {fileID: 670434645}
   Cam1SnapPos: {fileID: 108271765}
   LockActivate: {fileID: 1670497124}
   FreeActivate: {fileID: 963194232}
@@ -9791,6 +9792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CodeBlocksMenu: {fileID: 465958699958263496}
+  UI_Icons: {fileID: 670434645}
   InteractButton: 101
   firerate: 0
   nextfire: 0

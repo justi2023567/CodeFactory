@@ -6,6 +6,8 @@ public class CodeBlocks : MonoBehaviour
 {
     //Create a gameobject for the entire codeblocks menu
     public GameObject CodeBlocksMenu;
+
+    public GameObject UI_Icons;
     //Create a key code for the interact button
     public KeyCode InteractButton;
 
@@ -41,6 +43,8 @@ public class CodeBlocks : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 //Set cursor visibility to false
                 Cursor.visible = false;
+                // Enables the UI Icons
+                UI_Icons.SetActive(true);
                 //Deactivate the code blocks menu
                 CodeBlocksMenu.SetActive(false);
                 //Set open to false
@@ -57,6 +61,8 @@ public class CodeBlocks : MonoBehaviour
                 Cursor.visible = true;
                 //Set pc (created previously) playing to false
                 pc.playing = false;
+                //Disables the UI Icons
+                UI_Icons.SetActive(false);
                 //Activate the code blocks menu
                 CodeBlocksMenu.SetActive(true);
                 //Set open to true

@@ -12,6 +12,7 @@ public class UI_Shop : MonoBehaviour
     private Transform container; // Gets the Transform for container
     private Transform shopItemTemplate; // Gets the Transform for shopItemTemplate
 
+    // Creates a gameobject that holds the shop item template
     public GameObject shopItemTemplateObject;
 
     private void Awake()
@@ -22,9 +23,9 @@ public class UI_Shop : MonoBehaviour
         shopItemTemplate = container.Find("shopItemTemplate"); // Inside our container is the refrence to the template
     }
 
-    // Dynamically creates a new item in the shop
     private void Start()
     {
+        // Dynamically creates a new item in the shop
         CreateItemButton(Item.ItemType.bronzePogForPogs, Item.GetSprite(Item.ItemType.bronzePogForPogs), "Bronze Pog", Item.GetCost(Item.ItemType.bronzePogForPogs), GameAssets.i.pog, 0);
         CreateItemButton(Item.ItemType.silverPogForPogs, Item.GetSprite(Item.ItemType.silverPogForPogs), "Silver Pog", Item.GetCost(Item.ItemType.silverPogForPogs), GameAssets.i.pog, 1);
         CreateItemButton(Item.ItemType.silverPogForBronzePogs, Item.GetSprite(Item.ItemType.silverPogForBronzePogs), "Silver Pog", Item.GetCost(Item.ItemType.silverPogForBronzePogs), GameAssets.i.bronzePog, 2);
@@ -36,17 +37,20 @@ public class UI_Shop : MonoBehaviour
         CreateItemButton(Item.ItemType.diamondPogForSilverPogs, Item.GetSprite(Item.ItemType.diamondPogForSilverPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForSilverPogs), GameAssets.i.silverPog, 8);
         CreateItemButton(Item.ItemType.diamondPogForGoldPogs, Item.GetSprite(Item.ItemType.diamondPogForGoldPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForGoldPogs), GameAssets.i.goldPog, 9);
 
+        // Disables the shop item template, leaving only the clones
         shopItemTemplateObject.SetActive(false);
     }
 
-    // Spawns a template with a given name, sprite, and price
+    // Spawns a template with a given item, sprite, name, price, currency sprite, and position index
     private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, Sprite currencySprite, int positionIndex)
     {
         // Duplicates the item template
         Transform shopItemTransform = Instantiate(shopItemTemplate, container); // Instantiate the item template inside the container
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>(); // Grabs the RectTransform of shopItemTransform (Info for RectTransform at https://docs.unity3d.com/ScriptReference/RectTransform.html)
 
+        // Controls where how far apart the clones are made from each other (this might not control this any more after the integration of the scrolling feature)
         float shopItemHeight = 170f;
+
         // Modifies the anchored position by a certain item height multiplied by the index
         shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
 
@@ -54,7 +58,6 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString()); // Sets the cost text
         shopItemTransform.Find("itemImage").GetComponent<Image>().sprite = itemSprite; // Sets the item image
         shopItemTransform.Find("currencyImage").GetComponent<Image>().sprite = currencySprite; // Sets the currency image
-
-        shopItemTransform.gameObject.GetComponentInChildren<ShopUI_Button>().index = positionIndex;
+        shopItemTransform.gameObject.GetComponentInChildren<ShopUI_Button>().index = positionIndex; // Sets the position index
     }
 }

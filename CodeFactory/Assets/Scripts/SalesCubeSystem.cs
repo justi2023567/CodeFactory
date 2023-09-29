@@ -8,6 +8,7 @@ public class SalesCubeSystem : MonoBehaviour
     // Creates a GameObject called UI_Shop and it is assigned with the UI_Shop script through Unity
     public GameObject UI_Shop;
 
+    // Creates a gameobject that holds the UI Icons
     public GameObject UI_Icons;
 
     // Creates a PlayerController named pc and it is assigned with the PlayerController script through Unity
@@ -20,14 +21,16 @@ public class SalesCubeSystem : MonoBehaviour
     bool player_detection = false;
 
     // Variable used to detect if the shop is open
-    bool open = false;
+    public bool open = false;
 
     // Update is called once per frame
     void Update()
     {
         // Checks if player_detection is true and if a certain key is pressed and if open is false
-        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false)
+        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
         {
+            // Sets pc.playing to false
+            pc.playing = false;
             // Disables the UI_Icons
             UI_Icons.SetActive(false);
             // Enables the shop
@@ -44,16 +47,16 @@ public class SalesCubeSystem : MonoBehaviour
         }
 
         // Checks if player_detection is true and if a certain key is pressed and if open is true
-        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true)
+        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true && pc.playing == false)
         {
+            // Sets pc.playing to false
+            pc.playing = true;
             // Disables the UI_Icons
             UI_Icons.SetActive(true);
             // Disables the shop
             UI_Shop.SetActive(false);
             // Sets open to false
             open = false;
-            // Set pc (created previously) playing to true
-            pc.playing = true;
             // Set cursor lock state to locked, which prevents the cursor from leaving the game
             Cursor.lockState = CursorLockMode.Locked;
             // Set cursor visibility to false
@@ -79,8 +82,13 @@ public class SalesCubeSystem : MonoBehaviour
         // Changes player_detection to false
         player_detection = false;
 
-        UI_Icons.SetActive(true);
-        UI_Shop.SetActive(false);
+        // Sets open to false
         open = false;
+
+        // Enables the UI Icons
+        UI_Icons.SetActive(true);
+
+        // Disables the shop
+        UI_Shop.SetActive(false);
     }
 }

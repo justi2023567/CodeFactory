@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float movespeedperc;
     //Create a bool to hold if the game is paused or not (playing or not)
     public bool playing = true;
+    public bool open = false;
     //Create a transform
     public Transform tf;
     //Create a Quaternion (A quaternion is essentially the rotation of an object, -- 
@@ -19,10 +20,16 @@ public class PlayerController : MonoBehaviour
     public Quaternion ttf;
     //Create a gameobject for the entire settings menu
     public GameObject SettingsMenu;
-    //Create a gameobject for the entire inventory menu
-    public GameObject InventoryMenu;
 
+    // Creates gameobjects for the UI's below
+    public GameObject CodeBlocksMenu;
+    public GameObject UI_Shop;
+    public GameObject UI_Inventory;
     public GameObject UI_Icons;
+
+    public CodeBlocks codeBlocks;
+    public SalesCubeSystem salesCubeSystem;
+    public inventoryUI inventoryUI;
 
     //Create a event for when a key is pressed
     public Event keyHappen;
@@ -84,29 +91,38 @@ public class PlayerController : MonoBehaviour
         //Set the mouse's sensitivity to what ever value the slider is at
         mousesens = MouseSensitivity.value;
 
-        //If the key "Escape" is pressed and the player is not in the pause menu (playing)
-        if (Input.GetKeyDown(KeyCode.Escape) && playing == true)
+        //If the key "Escape" is pressed and the settings menu is not open
+        if (Input.GetKeyDown(KeyCode.Escape) && open == false)
         {
-            //Player is in the pause menu now, set playing to false
+            // Disables the UI's listed below
+            CodeBlocksMenu.SetActive(false);
+            UI_Shop.SetActive(false);
+            UI_Inventory.SetActive(false);
+            UI_Icons.SetActive(false);
+            //Player is in the pause menu now, set playing to false and open to true
             playing = false;
+            open = true;
             //Unlock the cursor so that the player can move their cursor without moving the players body
             Cursor.lockState = CursorLockMode.None;
             //Make the players cursor visible
             Cursor.visible = true;
-            // Disables the UI Icons
-            UI_Icons.SetActive(false);
             //Activate the settings menu to show up for the player
             SettingsMenu.SetActive(true);
             //Return to leave the void instead of running the code below
             return;
         }
-        //If the key "Escape" is pressed and the player is in the pause menu (playing)
-        if (Input.GetKeyDown(KeyCode.Escape) && playing == false)
+        //If the key "Escape" is pressed and the settings menu is open
+        if (Input.GetKeyDown(KeyCode.Escape) && open == true)
         {
-            //Player isn't in the pause menu now, set playing to true
-            playing = true;
-            // Enables the UI Icons
+            // Enables the UI's listed below
             UI_Icons.SetActive(true);
+            codeBlocks.open = false;
+            salesCubeSystem.open = false;
+            inventoryUI.open = false;
+            SettingsMenu.SetActive(true);
+            //Player isn't in the pause menu now, set playing to true and open to false
+            playing = true;
+            open = false;
             //Deactivate the settings menu and put the player back into the game
             SettingsMenu.SetActive(false);
             //Return to leave the void instead of running the code above
@@ -147,30 +163,6 @@ public class PlayerController : MonoBehaviour
             CameraState = 2;
             //Set reset to true
             reset = true;
-            //Return to leave the void instead of running code above
-            return;
-        }
-        //If the key to change the inventory state is pressed and the player is playing
-        if (Input.GetKeyDown(InventoryStateKey) && playing == true)
-        {
-            //Change the cursor lock mode so that it can move freely
-            Cursor.lockState = CursorLockMode.None;
-            //Make the cursor visible
-            Cursor.visible = true;
-            //Activate the inventory menu to show on the player's UI
-            InventoryMenu.SetActive(true);
-            //Set playing to false
-            playing = false;
-            //Return to leave the void instead of running code below
-            return;
-        }
-        //If the key to change the inventory state is pressed and the player is not playing
-        if (Input.GetKeyDown(InventoryStateKey) && playing == false)
-        {
-            //Change the inventory to disappear
-            InventoryMenu.SetActive(false);
-            //Activate the players ability to play again
-            playing = true;
             //Return to leave the void instead of running code above
             return;
         }

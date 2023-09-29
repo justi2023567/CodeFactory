@@ -35,7 +35,7 @@ public class CodeBlocks : MonoBehaviour
             //Reset timer
             nextfire = Time.time + firerate;
             //If interact button key is pressed and the code menu is already open
-            if (Input.GetKeyDown(InteractButton) && open == true)
+            if (Input.GetKeyDown(InteractButton) && open == true && pc.playing == false)
             {
                 //Set pc (created previously) playing to true
                 pc.playing = true;
@@ -53,14 +53,14 @@ public class CodeBlocks : MonoBehaviour
                 return;
             }
             //If interact button key is pressed and the code menu is not already open
-            if (Input.GetKeyDown(InteractButton) && open == false)
+            if (Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
             {
+                //Set pc (created previously) playing to false
+                pc.playing = false;
                 //Set cursor lock state to none, which allows the player to move the mouse freely
                 Cursor.lockState = CursorLockMode.None;
                 //Set cursor visibility to true
                 Cursor.visible = true;
-                //Set pc (created previously) playing to false
-                pc.playing = false;
                 //Disables the UI Icons
                 UI_Icons.SetActive(false);
                 //Activate the code blocks menu

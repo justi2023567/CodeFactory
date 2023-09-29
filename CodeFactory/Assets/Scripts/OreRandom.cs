@@ -49,6 +49,7 @@ public class OreRandom : MonoBehaviour
 
     void FixedUpdate()
     {
+        /*
         // oreClosest = GetComponent<OreMining>().oreClosest;
 
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -80,5 +81,6 @@ public class OreRandom : MonoBehaviour
                 playerInv.diamondCount += 1;
             }
         }
+        */
     }
 }

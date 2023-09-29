@@ -6,10 +6,13 @@ using TMPro;
 
 public class ShopUI_Button : MonoBehaviour
 {
+    // Used to know which item (button) is being clicked (same as the position index from the UI_Shop.cs script)
     public int index;
 
+    // Holds the inventory
     public Inventory script;
 
+    // Creates a gameobject for the text thats going to change
     public GameObject changingText;
 
     // Function used to check if the button was clicked

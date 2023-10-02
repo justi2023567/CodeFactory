@@ -49,15 +49,11 @@ public class OreRandom : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*
-        // oreClosest = GetComponent<OreMining>().oreClosest;
-
         Player = GameObject.FindGameObjectWithTag("Player");
         var playerInv = Player.GetComponent<Inventory>();
 
         if (oreClosest.GetComponent<OreHealth>().health <= 0)
         {
-            var ranNum = Random.Range(0, 100) + 1;
             // Ore Randomization Start
             // Uses the randomly selected number to chose an ore and add it to the player's inventory
             if (ranNum <= 50)
@@ -81,6 +77,5 @@ public class OreRandom : MonoBehaviour
                 playerInv.diamondCount += 1;
             }
         }
-        */
     }
 }

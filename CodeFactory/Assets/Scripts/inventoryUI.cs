@@ -9,6 +9,13 @@ public class inventoryUI : MonoBehaviour
     // Holds the inventory's UI gameobject
     public GameObject inventory;
 
+    // Holds the inventory UI icon
+    public GameObject inventoryIcon;
+
+    // Holds the inventory on and off icons
+    public Sprite inventoryIconOn;
+    public Sprite inventoryIconOff;
+
     // Holds all the text gameobjects
     public GameObject stoneText;
     public GameObject coalText;
@@ -56,6 +63,8 @@ public class inventoryUI : MonoBehaviour
         // If the interact button is pressed and the inventory is not open
         if (Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
         {
+            // Turns the inventory icon to its on state
+            inventoryIcon.GetComponent<Image>().sprite = inventoryIconOn;
             // Sets pc.playing to false
             pc.playing = false;
             // Activate the inventory
@@ -64,7 +73,7 @@ public class inventoryUI : MonoBehaviour
             open = true;
             return;
         }
-        // If the intteract button is pressed and the inventory is open
+        // If the interact button is pressed and the inventory is open
         if (Input.GetKeyDown(InteractButton) && open == true && pc.playing == false)
         {
             // Sets pc.playing to true
@@ -74,6 +83,12 @@ public class inventoryUI : MonoBehaviour
             // Set open to false
             open = false;
             return;
+        }
+        // If the inventory is not open
+        if (open == false)
+        {
+            // Turns the inventory icon to its off state
+            inventoryIcon.GetComponent<Image>().sprite = inventoryIconOff;
         }
     }
 }

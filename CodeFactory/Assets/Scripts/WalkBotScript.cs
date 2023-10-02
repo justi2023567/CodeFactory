@@ -201,7 +201,7 @@ public class WalkBotScript : MonoBehaviour
             if (other.tag == "ore" && canMine == true && Vector3.Distance(new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z), new Vector3(agent.destination.x, 0, agent.destination.z)) <= 1)
             {
                 //If the walkbot can store objects, and the timer has run out
-                if (canStore == true && Time.time > nextfire)
+                if (canStore == true)
                 {
                     //Reset timer
                     nextfire = Time.time + firerate;
@@ -219,7 +219,6 @@ public class WalkBotScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-
         this.GetComponent<OreMining>().blowup = false;
     }
 }

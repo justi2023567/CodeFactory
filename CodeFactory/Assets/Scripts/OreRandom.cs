@@ -49,9 +49,9 @@ public class OreRandom : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         /*
-        // oreClosest = GetComponent<OreMining>().oreClosest;
-
+        //oreClosest = GetComponent<OreMining>().oreClosest;
         Player = GameObject.FindGameObjectWithTag("Player");
         var playerInv = Player.GetComponent<Inventory>();
 

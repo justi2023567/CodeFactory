@@ -15,6 +15,9 @@ public class ShopUI_Button : MonoBehaviour
     // Creates a gameobject for the text thats going to change
     public GameObject changingText;
 
+    // Creates a gameobject for the popup text that appears telling you that you're poor
+    public GameObject yourePoor;
+
     // Function used to check if the button was clicked
     public void buttonClicked()
     {
@@ -78,6 +81,9 @@ public class ShopUI_Button : MonoBehaviour
             script.diamondPogCount++;
             script.goldPogCount -= 10;
             return;
+        } else
+        {
+            yourePoor.SetActive(true);
         }
     }
 

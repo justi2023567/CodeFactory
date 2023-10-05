@@ -8,6 +8,7 @@ TagManager:
   - ore
   - Sphere
   - StoneChunk
+  - WalkBot
   layers:
   - Default
   - TransparentFX

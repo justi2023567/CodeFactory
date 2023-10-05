@@ -27,7 +27,7 @@ public class SalesCubeSystem : MonoBehaviour
     void Update()
     {
         // Checks if player_detection is true and if a certain key is pressed and if open is false
-        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
+        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false && pc.playing == true && pc.open == false)
         {
             // Sets pc.playing to false
             pc.playing = false;
@@ -49,10 +49,13 @@ public class SalesCubeSystem : MonoBehaviour
         // Checks if player_detection is true and if a certain key is pressed and if open is true
         if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true && pc.playing == false)
         {
-            // Sets pc.playing to false
+            // Sets pc.playing to true
             pc.playing = true;
-            // Disables the UI_Icons
-            UI_Icons.SetActive(true);
+            if (pc.open == false)
+            {
+                // Enables the UI_Icons
+                UI_Icons.SetActive(true);
+            }
             // Disables the shop
             UI_Shop.SetActive(false);
             // Sets open to false

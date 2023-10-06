@@ -61,7 +61,7 @@ public class inventoryUI : MonoBehaviour
         botsAcquiredText.GetComponent<TextMeshProUGUI>().text = "Bots: " + botsAmount;
 
         // If the interact button is pressed and the inventory is not open
-        if (Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
+        if (Input.GetKeyDown(InteractButton) && open == false && pc.playing == true && pc.open == false)
         {
             // Turns the inventory icon to its on state
             inventoryIcon.GetComponent<Image>().sprite = inventoryIconOn;

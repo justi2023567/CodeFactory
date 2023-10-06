@@ -10,6 +10,7 @@ TagManager:
   - StoneChunk
   - OreRemains
   - Flybot
+  - WalkBot
   layers:
   - Default
   - TransparentFX

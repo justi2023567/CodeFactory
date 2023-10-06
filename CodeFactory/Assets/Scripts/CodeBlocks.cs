@@ -43,8 +43,11 @@ public class CodeBlocks : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 //Set cursor visibility to false
                 Cursor.visible = false;
-                // Enables the UI Icons
-                UI_Icons.SetActive(true);
+                if (pc.open == false)
+                {
+                    // Enables the UI Icons
+                    UI_Icons.SetActive(true);
+                }
                 //Deactivate the code blocks menu
                 CodeBlocksMenu.SetActive(false);
                 //Set open to false
@@ -53,7 +56,7 @@ public class CodeBlocks : MonoBehaviour
                 return;
             }
             //If interact button key is pressed and the code menu is not already open
-            if (Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
+            if (Input.GetKeyDown(InteractButton) && open == false && pc.playing == true && pc.open == false)
             {
                 //Set pc (created previously) playing to false
                 pc.playing = false;

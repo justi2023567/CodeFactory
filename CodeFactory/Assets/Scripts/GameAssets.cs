@@ -29,4 +29,9 @@ public class GameAssets : MonoBehaviour
     public Sprite silverPog; // Holds the sprite for silver pogs
     public Sprite goldPog; // Holds the sprite for gold pogs
     public Sprite diamondPog; // Holds the sprite for diamond pogs
+    public Sprite stone; // Holds the sprite for the stone icon
+    public Sprite coal; // Holds the sprite for the coal icon
+    public Sprite iron; // Holds the sprite for the iron icon
+    public Sprite gold; // Holds the sprite for the gold icon
+    public Sprite diamond; // Holds the sprite for the diamond icon
 }

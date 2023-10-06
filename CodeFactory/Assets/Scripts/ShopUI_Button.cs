@@ -12,11 +12,24 @@ public class ShopUI_Button : MonoBehaviour
     // Holds the inventory
     public Inventory script;
 
+    // Holds the gameobject for their respective systems
+    public GameObject buyingSystem;
+    public GameObject sellingSystem;
+
     // Creates a gameobject for the text thats going to change
     public GameObject changingText;
 
+    // Creates a gameobject for the popup text that appears telling you that you're poor
+    public GameObject yourePoor;
+    public GameObject yourePoorText;
+
+    public IEnumerator timer()
+    {
+        yield return new WaitForSeconds(3f);
+        yourePoor.SetActive(false);
+    }
     // Function used to check if the button was clicked
-    public void buttonClicked()
+    public void buttonClickedBuy()
     {
         // Checks if the index is the same as the index that you clicked and if you have enough of the currency to buy the item
         if (index == 0 && script.pogCount >= 10)
@@ -78,61 +91,146 @@ public class ShopUI_Button : MonoBehaviour
             script.diamondPogCount++;
             script.goldPogCount -= 10;
             return;
+        } else
+        {
+            yourePoorText.GetComponent<TextMeshProUGUI>().text = "Not Enough Money!!";
+            yourePoor.SetActive(true);
+            StartCoroutine(timer());
+        }
+    }
+    public void buttonClickedSell()
+    {
+        // Checks if the index is the same as the index that you clicked and if you have enough of the currency to buy the item
+        if (index == 0 && script.stoneCount >= 10)
+        {
+            script.pogCount++;
+            script.stoneCount -= 10;
+            return;
+        }
+        if (index == 1 && script.coalCount >= 5)
+        {
+            script.pogCount++;
+            script.coalCount -= 5;
+            return;
+        }
+        // Continue here later
+        if (index == 2 && script.ironCount >= 1)
+        {
+            script.pogCount++;
+            script.ironCount -= 1;
+            return;
+        }
+        if (index == 3 && script.goldCount >= 1)
+        {
+            script.pogCount += 5;
+            script.goldCount -= 1;
+            return;
+        }
+        if (index == 4 && script.diamondCount >= 1)
+        {
+            script.pogCount += 10;
+            script.diamondCount -= 1;
+            return;
+        }
+        if (index == 5 && script.diamondCount >= 1)
+        {
+            script.bronzePogCount++;
+            script.diamondCount -= 1;
+            return;
+        } else
+        {
+            yourePoorText.GetComponent<TextMeshProUGUI>().text = "Not Enough Resources!!";
+            yourePoor.SetActive(true);
+            StartCoroutine(timer());
         }
     }
 
     // Function used to check if the mouse is hovering on top of the item
-    public void onHover()
+    public void onHoverBuy()
     {
         // If the index is the same as the index you are hovering over, the description gets changed to the description of that item
         if (index == 0)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Bronze Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Bronze Pog.";
             return;
         }
         else if (index == 1)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Silver Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Silver Pog.";
             return;
         }
         else if (index == 2)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Silver Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Silver Pog.";
             return;
         }
         else if (index == 3)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Gold Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Gold Pog.";
             return;
         }
         else if (index == 4)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Gold Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Gold Pog.";
             return;
         }
         else if (index == 5)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Gold Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Gold Pog.";
             return;
         }
         else if (index == 6)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
         else if (index == 7)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
         else if (index == 8)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
         else if (index == 9)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
+            return;
+        }
+    }
+
+    public void onHoverSell()
+    {
+        if (index == 0)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling stone.";
+            return;
+        }
+        else if (index == 1)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling coal.";
+            return;
+        }
+        else if (index == 2)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling iron.";
+            return;
+        }
+        else if (index == 3)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling gold.";
+            return;
+        }
+        else if (index == 4)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling diamond.";
+            return;
+        }
+        else if (index == 5)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling diamond.";
             return;
         }
     }
@@ -143,5 +241,17 @@ public class ShopUI_Button : MonoBehaviour
         // Changes the description to the placeholder
         changingText.GetComponent<TextMeshProUGUI>().text = "Nothing...";
         return;
+    }
+
+    public void buyButtonClicked()
+    {
+        buyingSystem.SetActive(true);
+        sellingSystem.SetActive(false);
+    }
+
+    public void sellButtonClicked()
+    {
+        sellingSystem.SetActive(true);
+        buyingSystem.SetActive(false);
     }
 }

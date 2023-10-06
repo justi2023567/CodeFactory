@@ -11,6 +11,9 @@ public class SalesCubeSystem : MonoBehaviour
     // Creates a gameobject that holds the UI Icons
     public GameObject UI_Icons;
 
+    // Creats a gameobject that holds the yourePoorBox
+    public GameObject yourePoorBox;
+
     // Creates a PlayerController named pc and it is assigned with the PlayerController script through Unity
     public PlayerController pc;
 
@@ -27,7 +30,7 @@ public class SalesCubeSystem : MonoBehaviour
     void Update()
     {
         // Checks if player_detection is true and if a certain key is pressed and if open is false
-        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false && pc.playing == true)
+        if (player_detection == true && Input.GetKeyDown(InteractButton) && open == false && pc.playing == true && pc.open == false)
         {
             // Sets pc.playing to false
             pc.playing = false;
@@ -49,10 +52,13 @@ public class SalesCubeSystem : MonoBehaviour
         // Checks if player_detection is true and if a certain key is pressed and if open is true
         if (player_detection == true && Input.GetKeyDown(InteractButton) && open == true && pc.playing == false)
         {
-            // Sets pc.playing to false
+            // Sets pc.playing to true
             pc.playing = true;
-            // Disables the UI_Icons
-            UI_Icons.SetActive(true);
+            if (pc.open == false)
+            {
+                // Enables the UI_Icons
+                UI_Icons.SetActive(true);
+            }
             // Disables the shop
             UI_Shop.SetActive(false);
             // Sets open to false
@@ -62,6 +68,11 @@ public class SalesCubeSystem : MonoBehaviour
             // Set cursor visibility to false
             Cursor.visible = false;
             return;
+        }
+
+        if (open == false)
+        {
+            yourePoorBox.SetActive(false);
         }
     }
 

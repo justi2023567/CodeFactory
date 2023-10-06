@@ -4301,7 +4301,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -0.00000009437807, z: 4e-45, w: 0}
+  m_BoundingSphereOverride: {x: -9.797889e-23, y: 1.4378989e+10, z: -2.7080497e-22,
+    w: 1.4378989e+10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -11323,6 +11324,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   InvContaining: 0
   othersrobots: []
+  FlyBot: {fileID: 0}
   code: 
   canMine: 0
   canStore: 0
@@ -12034,6 +12036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goals: []
   tMin: {fileID: 0}
+  oreChunckClosest: {fileID: 0}
 --- !u!1 &1872899637
 GameObject:
   m_ObjectHideFlags: 0
@@ -12701,6 +12704,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   InvContaining: 0
   othersrobots: []
+  FlyBot: {fileID: 0}
   code: 
   canMine: 0
   canStore: 0
@@ -18738,11 +18742,11 @@ GameObject:
   - component: {fileID: 3604009902392269560}
   m_Layer: 0
   m_Name: FlyBot
-  m_TagString: Bot
+  m_TagString: Flybot
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &3604009902392269553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18751,7 +18755,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604009902392269552}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

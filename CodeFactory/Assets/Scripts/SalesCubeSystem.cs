@@ -11,6 +11,9 @@ public class SalesCubeSystem : MonoBehaviour
     // Creates a gameobject that holds the UI Icons
     public GameObject UI_Icons;
 
+    // Creats a gameobject that holds the yourePoorBox
+    public GameObject yourePoorBox;
+
     // Creates a PlayerController named pc and it is assigned with the PlayerController script through Unity
     public PlayerController pc;
 
@@ -65,6 +68,11 @@ public class SalesCubeSystem : MonoBehaviour
             // Set cursor visibility to false
             Cursor.visible = false;
             return;
+        }
+
+        if (open == false)
+        {
+            yourePoorBox.SetActive(false);
         }
     }
 

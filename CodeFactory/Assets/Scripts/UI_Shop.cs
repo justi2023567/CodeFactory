@@ -59,7 +59,7 @@ public class UI_Shop : MonoBehaviour
         CreateItemButtonBuy(Item.ItemType.diamondPogForGoldPogs, Item.GetSprite(Item.ItemType.diamondPogForGoldPogs), "Diamond Pog", Item.GetCost(Item.ItemType.diamondPogForGoldPogs), GameAssets.i.goldPog, 9);
         // Dynamic items for the selling system
         CreateItemButtonSell(Item.ItemType.pogForStone, GameAssets.i.pog, "1 Pog", Item.GetCost(Item.ItemType.pogForStone), GameAssets.i.stone, 0);
-        CreateItemButtonSell(Item.ItemType.pogForCoal, GameAssets.i.pog, "1 Pog", Item.GetCost(Item.ItemType.pogForCoal), GameAssets.i.stone, 1);
+        CreateItemButtonSell(Item.ItemType.pogForCoal, GameAssets.i.pog, "1 Pog", Item.GetCost(Item.ItemType.pogForCoal), GameAssets.i.coal, 1);
         CreateItemButtonSell(Item.ItemType.pogForIron, GameAssets.i.pog, "1 Pog", Item.GetCost(Item.ItemType.pogForIron), GameAssets.i.iron, 2);
         CreateItemButtonSell(Item.ItemType.pogsForGold, GameAssets.i.pog, "5 Pogs", Item.GetCost(Item.ItemType.pogsForGold), GameAssets.i.gold, 3);
         CreateItemButtonSell(Item.ItemType.pogsForDiamond, GameAssets.i.pog, "10 Pogs", Item.GetCost(Item.ItemType.pogsForDiamond), GameAssets.i.diamond, 4);

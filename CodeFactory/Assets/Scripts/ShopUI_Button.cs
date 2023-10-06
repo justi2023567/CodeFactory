@@ -114,28 +114,28 @@ public class ShopUI_Button : MonoBehaviour
             return;
         }
         // Continue here later
-        if (index == 2 && script.bronzePogCount >= 10)
+        if (index == 2 && script.ironCount >= 1)
         {
-            script.silverPogCount++;
-            script.bronzePogCount -= 10;
+            script.pogCount++;
+            script.ironCount -= 1;
             return;
         }
-        if (index == 3 && script.pogCount >= 1000)
+        if (index == 3 && script.goldCount >= 1)
         {
-            script.goldPogCount++;
-            script.pogCount -= 1000;
+            script.pogCount += 5;
+            script.goldCount -= 1;
             return;
         }
-        if (index == 4 && script.bronzePogCount >= 100)
+        if (index == 4 && script.diamondCount >= 1)
         {
-            script.goldPogCount++;
-            script.bronzePogCount -= 100;
+            script.pogCount += 10;
+            script.diamondCount -= 1;
             return;
         }
-        if (index == 5 && script.silverPogCount >= 10)
+        if (index == 5 && script.diamondCount >= 1)
         {
-            script.goldPogCount++;
-            script.silverPogCount -= 10;
+            script.bronzePogCount++;
+            script.diamondCount -= 1;
             return;
         } else
         {
@@ -151,59 +151,88 @@ public class ShopUI_Button : MonoBehaviour
         // If the index is the same as the index you are hovering over, the description gets changed to the description of that item
         if (index == 0)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Bronze Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Bronze Pog.";
             return;
         }
         else if (index == 1)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Silver Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Silver Pog.";
             return;
         }
         else if (index == 2)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Silver Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Silver Pog.";
             return;
         }
         else if (index == 3)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Gold Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Gold Pog.";
             return;
         }
         else if (index == 4)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Gold Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Gold Pog.";
             return;
         }
         else if (index == 5)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Gold Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Gold Pog.";
             return;
         }
         else if (index == 6)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
         else if (index == 7)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
         else if (index == 8)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
         else if (index == 9)
         {
-            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for a Diamond Pog.";
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for buying a Diamond Pog.";
             return;
         }
     }
 
     public void onHoverSell()
     {
-        //placeholder
+        if (index == 0)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling stone.";
+            return;
+        }
+        else if (index == 1)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling coal.";
+            return;
+        }
+        else if (index == 2)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling iron.";
+            return;
+        }
+        else if (index == 3)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling gold.";
+            return;
+        }
+        else if (index == 4)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling diamond.";
+            return;
+        }
+        else if (index == 5)
+        {
+            changingText.GetComponent<TextMeshProUGUI>().text = "Placeholder description for selling diamond.";
+            return;
+        }
     }
 
     // Function used to check if the mouse is no longer hovering over 

@@ -159,4 +159,9 @@ MonoBehaviour:
   ironMaterial: {fileID: 2100000, guid: a0e76c70dbcfa32469aa7443eb7d91dd, type: 2}
   goldMaterial: {fileID: 2100000, guid: a4932876fa316ed4b8f6c5f6bfccd10a, type: 2}
   diamondMaterial: {fileID: 2100000, guid: 9fd7ce9bcb548cd4f8114400c4e69e91, type: 2}
+  StoneD: {fileID: 1832475428084072, guid: 18bc176936d253a47a585072a62aa034, type: 3}
+  IronD: {fileID: 1832475428084072, guid: 2ae249da5820f9c46a7e6f63efb837e5, type: 3}
+  CoalD: {fileID: 1832475428084072, guid: d2888a7d10cecfb449254ed6f02e411d, type: 3}
+  GoldD: {fileID: 1832475428084072, guid: 996796b3e17a2af41aa9395733a3b3e5, type: 3}
+  DiamondD: {fileID: 1832475428084072, guid: 2e8a7a8e05db33e4c88a34df908a9f09, type: 3}
   ranNum: 0

@@ -55,7 +55,6 @@ public class FlyBotScript : MonoBehaviour
                         minDist = dist;
                         //Set the closest transform to that ore
                         tMin = tt.transform;
-
                         oreChunckClosest = tMin.gameObject;
 
                         // * Goes down over an ore **NOT WORKING**

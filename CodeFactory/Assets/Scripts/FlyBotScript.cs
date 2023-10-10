@@ -11,6 +11,7 @@ public class FlyBotScript : MonoBehaviour
     public Transform tMin;
     //Creates a vector3 with the start position
     Vector3 startPos;
+    public GameObject oreChunckClosest;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class FlyBotScript : MonoBehaviour
     void FixedUpdate()
     {
         // Assigns all game objects with the tag "ore" as the variable "goals"
-        goals = GameObject.FindGameObjectsWithTag("ore");
+        goals = GameObject.FindGameObjectsWithTag("OreRemains");
 
         // Checks if goals is 0
         if (goals.Length < 1)
@@ -78,13 +79,8 @@ public class FlyBotScript : MonoBehaviour
     //If another object collides with the walkbot
     public void OnTriggerEnter(Collider other)
     {
-        //Blows up the ore using the ore tag, and the walkbot can mine
-        if (other.tag == "ore")
-        {
-            //Get the other script on this object and set blowup to be true
-            this.GetComponent<OreMining>().blowup = true;
-            //Get the other script on this object and set the closest ore to be the ore that was just mined
-            this.GetComponent<OreMining>().oreClosest = other.gameObject;
-        }
+
+        Destroy(oreChunckClosest.gameObject);
     }
 }
+

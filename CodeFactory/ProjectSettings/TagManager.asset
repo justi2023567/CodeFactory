@@ -9,6 +9,8 @@ TagManager:
   - Sphere
   - StoneChunk
   - WalkBot
+  - OreRemains
+  - Flybot
   layers:
   - Default
   - TransparentFX

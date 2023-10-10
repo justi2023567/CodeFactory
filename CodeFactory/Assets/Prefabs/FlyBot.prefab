@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3604009901723179147}
   - component: {fileID: 3604009901723179140}
   - component: {fileID: 3604009901723179141}
+  - component: {fileID: 726031775851929874}
   m_Layer: 0
   m_Name: FlyBot
   m_TagString: Untagged
@@ -127,11 +128,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3604009901723179139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bbc7ffb2736a9e449af4d80726309cd, type: 3}
+  m_Script: {fileID: 11500000, guid: c7dfc841a14a0a248b010a6012815fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   goals: []
   tMin: {fileID: 0}
+  oreChunckClosest: {fileID: 0}
 --- !u!65 &3604009901723179140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -161,3 +163,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &726031775851929874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604009901723179139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dfc841a14a0a248b010a6012815fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goals: []
+  tMin: {fileID: 0}
+  oreChunckClosest: {fileID: 0}

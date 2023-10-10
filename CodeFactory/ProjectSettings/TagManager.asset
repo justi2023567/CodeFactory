@@ -8,8 +8,6 @@ TagManager:
   - ore
   - Sphere
   - StoneChunk
-  - OreRemains
-  - Flybot
   - WalkBot
   layers:
   - Default

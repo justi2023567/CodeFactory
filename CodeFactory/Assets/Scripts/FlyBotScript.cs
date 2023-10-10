@@ -56,6 +56,8 @@ public class FlyBotScript : MonoBehaviour
                         //Set the closest transform to that ore
                         tMin = tt.transform;
 
+                        oreChunckClosest = tMin.gameObject;
+
                         // * Goes down over an ore **NOT WORKING**
                         if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.y), new Vector3(tMin.position.x, 0, tMin.position.y)) <= 3.48)
                         {
@@ -80,7 +82,7 @@ public class FlyBotScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        Destroy(oreChunckClosest.gameObject);
+        Destroy(oreChunckClosest.gameObject, 2f);
     }
 }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21401,7 +21401,6 @@ GameObject:
   - component: {fileID: 3604009902392269559}
   - component: {fileID: 3604009902392269558}
   - component: {fileID: 1842082298}
-  - component: {fileID: 3604009902392269560}
   m_Layer: 0
   m_Name: FlyBot
   m_TagString: Flybot
@@ -21533,37 +21532,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0829463, y: 1.660391, z: 1.0712719}
   m_Center: {x: 0.004311323, y: -0.035558462, z: 0.0018987656}
---- !u!114 &3604009902392269560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3604009902392269552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a8aeb24357d07459737997c5ccf369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ore:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  orePrefab: {fileID: 9051482793227874658, guid: 581b84914a091994081c784aec7aed5a,
-    type: 3}
-  oreExplode: {fileID: 8416581562237619328, guid: c908d1612862d914e981926107603897,
-    type: 3}
-  sparkPrefab: {fileID: 5071835132905272109}
-  oreClosest: {fileID: 0}
-  blowup: 0
-  ore_detection: 0
-  collectOre: 1
-  radius: 5
-  power: 175
-  Player: {fileID: 1670497122}
-  firerate: 1
-  nextfire: 1
-  sparks: {fileID: 5071835132905272111}
 --- !u!199 &5071835132905272108
 ParticleSystemRenderer:
   serializedVersion: 6

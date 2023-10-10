@@ -65,36 +65,31 @@ public class OreRandom : MonoBehaviour
             {
                 playerInv.stoneCount += 1;
                 var StoneOreReplacement = Instantiate(StoneD, oreClosest.gameObject.transform.position, Quaternion.identity);
-                Vector3 StonePos = oreClosest.gameObject.transform.position;
-                Destroy(oreClosest.gameObject);
+                // Vector3 StonePos = oreClosest.gameObject.transform.position;
             }
             if (ranNum > 50 && ranNum <= 73)
             {
                 playerInv.coalCount += 1;
                 var CoalOreReplacement = Instantiate(CoalD, oreClosest.gameObject.transform.position, Quaternion.identity);
-                Vector3 CoalPos = oreClosest.gameObject.transform.position;
-                Destroy(oreClosest.gameObject);
+                // Vector3 CoalPos = oreClosest.gameObject.transform.position;
             }
             if (ranNum > 73 && ranNum <= 91)
             {
                 playerInv.ironCount += 1;
                 var IronOreReplacement = Instantiate(IronD, oreClosest.gameObject.transform.position, Quaternion.identity);
-                Vector3 IronPos = oreClosest.gameObject.transform.position;
-                Destroy(oreClosest.gameObject);
+                // Vector3 IronPos = oreClosest.gameObject.transform.position;
             }
             if (ranNum > 91 && ranNum < 100)
             {
                 playerInv.goldCount += 1;
                 var GoldOreReplacement = Instantiate(GoldD, oreClosest.gameObject.transform.position, Quaternion.identity);
-                Vector3 GoldPos = oreClosest.gameObject.transform.position;
-                Destroy(oreClosest.gameObject);
+                // Vector3 GoldPos = oreClosest.gameObject.transform.position;
             }
             if (ranNum == 100)
             {
                 playerInv.diamondCount += 1;
                 var DiamondOreReplacement = Instantiate(DiamondD, oreClosest.gameObject.transform.position, Quaternion.identity);
-                Vector3 DiamondPos = oreClosest.gameObject.transform.position;
-                Destroy(oreClosest.gameObject);
+                // Vector3 DiamondPos = oreClosest.gameObject.transform.position;
             }
         }
     }

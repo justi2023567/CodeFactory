@@ -1,7 +1,11 @@
 ﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+This code was made by Logan from code factory. This code is used for
+make the ore random each and everytime, while giving out the correct
+ore to the player.
+*/
 public class OreRandom : MonoBehaviour
 {
     // public script OreMining;
@@ -60,7 +64,7 @@ public class OreRandom : MonoBehaviour
         if (oreClosest.GetComponent<OreHealth>().health <= 0)
         {
             // Ore Randomization Start
-            // Uses the randomly selected number to chose an ore and add it to the player's inventory
+            // This entire section makes it so that when the ore's hp is zero, it takes the random number that we just had made, and use it to give the player the ore that they just made the robots mine.
             if (ranNum <= 50)
             {
                 playerInv.stoneCount += 1;

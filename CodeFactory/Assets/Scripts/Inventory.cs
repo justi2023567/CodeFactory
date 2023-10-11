@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+This code was made by Brandon, and this is the actual code that works in the background in order for the number to change in the UI, while having a test key in order we can test 
+The Sell function and the buy function on the Spongebob Bot.
+*/
 public class Inventory : MonoBehaviour
 {
     // A keycode you can edit on Unity under this script

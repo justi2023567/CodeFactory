@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+This code was made by Brandon from code factory. This code is used to explode the ores that have
+zero hp.
+*/
 public class OreMining : MonoBehaviour
 {
     // These variables hold assets

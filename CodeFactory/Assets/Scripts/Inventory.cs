@@ -1,11 +1,11 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: Inventory.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon
 
 <Description>
-
+Contains the inventory system.
 \***************************************************************************/
 
 using System.Collections;

@@ -1,11 +1,11 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: SettingsController.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
 
 <Description>
-
+Contains the functions for the buttons used in the settings menu.
 \***************************************************************************/
 
 using System.Collections;

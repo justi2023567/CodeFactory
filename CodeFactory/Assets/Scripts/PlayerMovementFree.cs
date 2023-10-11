@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: PlayerMovementFree.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
 
 <Description>
-
+Contains the functions for the players movement while the camera is in its
+free position. Camera in free position just means that the camera is basically 
+in free cam mode and can move anywhere and doesn't care about the player.
 \***************************************************************************/
 
 using System.Collections;

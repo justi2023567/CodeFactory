@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: PlayerMovementLock.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
 
 <Description>
-
+Contains the functions for the players movement while the camera is in its
+locked position. Camera in locked position just means that the camera is locked 
+onto the player.
 \***************************************************************************/
 
 using System.Collections;

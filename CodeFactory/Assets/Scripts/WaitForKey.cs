@@ -1,11 +1,11 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: WaitForKey.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
 
 <Description>
-
+Makes it so that there is a delay between key presses when switching camera modes.
 \***************************************************************************/
 
 using System.Collections;

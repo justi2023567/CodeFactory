@@ -1,20 +1,18 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: OreMining.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon
 
 <Description>
-
+Contains the functions used to mine the ore. These functions include sparks appearing
+while the ore is being mined, and the ore explding into multiple stone bits.
 \***************************************************************************/
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
-This code was made by Brandon from code factory. This code is used to explode the ores that have
-zero hp.
-*/
+
 public class OreMining : MonoBehaviour
 {
     // These variables hold assets

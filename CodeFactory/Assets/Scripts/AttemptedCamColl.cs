@@ -1,11 +1,11 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: AttemptedCamColl.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
 
 <Description>
-
+Makes it so that the camera can't collide with something and get stuck.
 \***************************************************************************/
 
 using System.Collections;

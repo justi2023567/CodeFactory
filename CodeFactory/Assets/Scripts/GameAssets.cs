@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/****************************** Script Header ******************************\
+Script Name: 
+Project: CodeFactory
+Author: 
+Editors: 
+
+<Description>
+
+\***************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Reflection;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/*
+This code is used for Flybot, and he/she collects the ore the remains after mining it.
+And returns it to the garage. Cannot code this one in game.
+*/
 public class FlyBotScript : MonoBehaviour
 {
     //Create a list of gameobjects that holds all of the "goals" (ores and targets) that the flybot uses

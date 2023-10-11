@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+This code was made code factory, and this file is used for allowing the player to open a menu 
+for the code blocks and allowing them to interact with the robot in that regard.
+*/
 public class CodeBlocks : MonoBehaviour
 {
     //Create a gameobject for the entire codeblocks menu

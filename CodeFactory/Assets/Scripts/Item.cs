@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+This code was made for brandon, and this is just a list of
+the pogs, and what you can buy and sell.
+*/
 public class Item
 {
     // Defines a bunch of item types

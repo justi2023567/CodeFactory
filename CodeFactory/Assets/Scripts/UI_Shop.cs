@@ -1,11 +1,15 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: UI_Shop.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon, Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Contains the functions of the UI of the shop. Current function is to dynamically 
+create the options you have for the buying and selling system. It does this by creating 
+a template using a function and then calling the template with the info required (Some
+of the info comes from other scripts).
 \***************************************************************************/
 
 using System.Collections;

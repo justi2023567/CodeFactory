@@ -2,7 +2,7 @@
 Script Name: OreHealth.cs
 Project: CodeFactory
 Author: Brandon
-Editors: Brandon
+Editors: Brandon, Macarios
 Last Edited: October 12, 2023
 
 <Description>

@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: PlayerController.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios, Brandon
+Last Edited: October 12, 2023
 
 <Description>
-
+Controls the players movement options.
 \***************************************************************************/
 
 using System.Collections;

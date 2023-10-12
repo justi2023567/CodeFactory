@@ -2,7 +2,7 @@
 Script Name: FlyBotScript.cs
 Project: CodeFactory
 Author: Xavier
-Editors: Xavier
+Editors: Xavier, Macarios
 Last Edited: October 12, 2023
 
 <Description>

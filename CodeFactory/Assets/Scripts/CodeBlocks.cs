@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: CodeBlocks.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Contains the functions for the code blocks which are used to interact with the 
+robots. Currently only used to interact with the walkbot.
 \***************************************************************************/
 
 using System.Collections;

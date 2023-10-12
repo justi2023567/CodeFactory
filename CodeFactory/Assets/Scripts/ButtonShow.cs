@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: ButtonShow.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Shows buttons or something like that.
 \***************************************************************************/
 
 using System.Collections;

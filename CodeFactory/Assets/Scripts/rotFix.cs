@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: rotFix.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Makes sure that the rotation stays fixed.
 \***************************************************************************/
 
 using System.Collections;

@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: WaitForKeyInventory.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Makes it so that you can't spam the inventory key.
 \***************************************************************************/
 
 using System.Collections;

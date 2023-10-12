@@ -1,11 +1,11 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: SnapUse.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
 
 <Description>
-
+Used for snap use.
 \***************************************************************************/
 
 using System.Collections;

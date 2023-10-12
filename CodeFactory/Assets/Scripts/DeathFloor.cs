@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: DeathFloor.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Teleports you back to the respawn point if you fall off the map.
 \***************************************************************************/
 
 using System.Collections;

@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: ConBeltScript.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Xavier
+Editors: Xavier
+Last Edited: October 12, 2023
 
 <Description>
-
+Contains the functions for the the conveyor belt.
 \***************************************************************************/
 
 using System.Collections;

@@ -2,7 +2,8 @@
 Script Name: AttemptedCamColl.cs
 Project: CodeFactory
 Author: Macarios
-Editors: Macarios
+Editors: Macarios, Xavier
+Last Edited: October 12, 2023
 
 <Description>
 Makes it so that the camera can't collide with something and get stuck.

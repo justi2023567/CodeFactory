@@ -3,6 +3,7 @@ Script Name: PlayerMovementFree.cs
 Project: CodeFactory
 Author: Macarios
 Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
 Contains the functions for the players movement while the camera is in its

@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: CodeHighlight.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Justin
+Editors: Justin, Xavier
+Last Edited: October 12, 2023
 
 <Description>
-
+Compiles the manual code that is writen in game.
 \***************************************************************************/
 
 using System.Collections;

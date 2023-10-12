@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: OreRandomizationSystem.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon, Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Randomizes the ores placement in a defined area.
 \***************************************************************************/
 
 using System.Collections;

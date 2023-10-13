@@ -2,8 +2,8 @@
 Script Name: CodeBlocks.cs
 Project: CodeFactory
 Author: Macarios
-Editors: Macarios
-Last Edited: October 12, 2023
+Editors: Macarios, Brandon
+Last Edited: October 13, 2023
 
 <Description>
 Contains the functions for the code blocks which are used to interact with the 

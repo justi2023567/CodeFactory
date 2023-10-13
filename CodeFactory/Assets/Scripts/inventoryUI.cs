@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: inventoryUI.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon
+Last Edited: October 13, 2023
 
 <Description>
-
+Contains the functions for the UI of the inventory.
 \***************************************************************************/
 
 using System.Collections;

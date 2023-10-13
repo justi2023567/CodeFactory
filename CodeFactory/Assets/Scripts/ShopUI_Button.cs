@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: ShopUI_Button.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon
+Last Edited: October 13, 2023
 
 <Description>
-
+Holds the functions for the buttons in the shop. This includes clicking the button 
+and hovering over the button.
 \***************************************************************************/
 
 using System.Collections;

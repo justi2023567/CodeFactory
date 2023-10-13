@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: RobotPanel.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Justin
+Editors: Justin
+Last Edited: October 13, 2023
 
 <Description>
-
+Contains the functions for the robot panel that allows you to enter manual code.
 \***************************************************************************/
 
 using System.Collections;

@@ -2,8 +2,8 @@
 Script Name: WalkBotScript.cs
 Project: CodeFactory
 Author: Xavier
-Editors: Xavier, Brandon, Macarios
-Last Edited: October 12, 2023
+Editors: Xavier, Brandon, Macarios, Logan
+Last Edited: October 13, 2023
 
 <Description>
 Contains the functions of the walkbot. Current functions include, allowing the 

@@ -3,7 +3,7 @@ Script Name: PlayerController.cs
 Project: CodeFactory
 Author: Macarios
 Editors: Macarios, Brandon
-Last Edited: October 12, 2023
+Last Edited: October 13, 2023
 
 <Description>
 Controls the players movement options.

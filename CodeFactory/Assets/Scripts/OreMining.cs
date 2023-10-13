@@ -2,8 +2,8 @@
 Script Name: OreMining.cs
 Project: CodeFactory
 Author: Brandon
-Editors: Brandon, Macarios
-Last Edited: October 12, 2023
+Editors: Brandon, Macarios, Logan
+Last Edited: October 13, 2023
 
 <Description>
 Contains the functions used to mine the ore. These functions include sparks appearing

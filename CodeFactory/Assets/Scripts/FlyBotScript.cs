@@ -2,8 +2,8 @@
 Script Name: FlyBotScript.cs
 Project: CodeFactory
 Author: Xavier
-Editors: Xavier, Macarios
-Last Edited: October 12, 2023
+Editors: Xavier, Macarios, Logan
+Last Edited: October 13, 2023
 
 <Description>
 Contains the functions for the flybot. Flybot right now flys over to the ore remains 

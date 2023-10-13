@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: StoneAnimationFadeOut.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon, Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Controlls the fade out animation for the ores when they get destroyed.
 \***************************************************************************/
 
 using System.Collections;

@@ -1,11 +1,14 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: Item.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon
+Last Edited: October 12, 2023
 
 <Description>
-
+Defines a bunch of items, gives them a number, and gets the items sprite. Currently 
+the only system using this script is the shop system but I am sure that it can be
+implemented into many other systems.
 \***************************************************************************/
 
 using System.Collections;

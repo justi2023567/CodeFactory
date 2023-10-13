@@ -1,11 +1,14 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: WalkBotScript.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Xavier
+Editors: Xavier, Brandon, Macarios, Logan
+Last Edited: October 13, 2023
 
 <Description>
-
+Contains the functions of the walkbot. Current functions include, allowing the 
+walkbot to walk around and navigate around the world, allowing the walkbot to be
+commanded by the player, and allowing the walkbot to pathfind to and mine ores.
 \***************************************************************************/
 
 using System.Collections;
@@ -22,8 +25,6 @@ public class WalkBotScript : MonoBehaviour
     public Transform tMin;
     //Creates a vector3 with the start position
     Vector3 startPos;
-    
-    
 
     public NavMeshAgent agent;
 

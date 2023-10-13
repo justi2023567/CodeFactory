@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: BlockValue.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios, Xavier
+Last Edited: October 12, 2023
 
 <Description>
-
+Holds a value. Thats all.
 \***************************************************************************/
 
 using System.Collections;

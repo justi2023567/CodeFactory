@@ -3,6 +3,7 @@ Script Name: WaitForKey.cs
 Project: CodeFactory
 Author: Macarios
 Editors: Macarios
+Last Edited: October 12, 2023
 
 <Description>
 Makes it so that there is a delay between key presses when switching camera modes.

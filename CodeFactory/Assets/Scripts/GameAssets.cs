@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: GameAssets.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon
+Last Edited: October 12, 2023
 
 <Description>
-
+Holds game assets which are set in Unity. Currently only used for the shop system 
+but can probably be integrated into many other systems.
 \***************************************************************************/
 
 using System.Collections;

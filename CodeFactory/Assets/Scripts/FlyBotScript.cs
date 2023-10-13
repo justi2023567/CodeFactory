@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: FlyBotScript.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Xavier
+Editors: Xavier, Macarios, Logan
+Last Edited: October 13, 2023
 
 <Description>
-
+Contains the functions for the flybot. Flybot right now flys over to the ore remains 
+and breaks it.
 \***************************************************************************/
 
 using System.Collections;

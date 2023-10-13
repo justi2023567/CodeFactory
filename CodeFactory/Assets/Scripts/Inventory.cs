@@ -3,6 +3,7 @@ Script Name: Inventory.cs
 Project: CodeFactory
 Author: Brandon
 Editors: Brandon
+Last Edited: October 12, 2023
 
 <Description>
 Contains the inventory system.

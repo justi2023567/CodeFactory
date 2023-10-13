@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: ArmBotScript.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Justin
+Editors: Justin, Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Contains the functions of armbot. Allows armbot to grab items nearby it.
 \***************************************************************************/
 
 using System.Collections;

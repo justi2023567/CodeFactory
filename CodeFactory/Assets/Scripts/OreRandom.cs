@@ -1,14 +1,16 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: OreRandom.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Logan
+Editors: Logan, Brandon
+Last Edited: October 13, 2023
 
 <Description>
-
+Contains the functions for the ore's texture and item drop randomizing. It also drops
+a piece of that ore that can be collected.
 \***************************************************************************/
 
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /*

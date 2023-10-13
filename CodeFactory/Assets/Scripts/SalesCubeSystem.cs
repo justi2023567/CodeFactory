@@ -1,11 +1,13 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: SalesCubeSystem.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon, Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Contains the functions of the sales cube. The sales cube function is to be interatable
+with the player. When the player presses the interact button, the shop menu will open.
 \***************************************************************************/
 
 using System.Collections;

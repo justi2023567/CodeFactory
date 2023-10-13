@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: CheckBlocks.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Macarios
+Editors: Macarios, Xavier
+Last Edited: October 12, 2023
 
 <Description>
-
+Checks for the blocks.
 \***************************************************************************/
 
 using System.Collections;

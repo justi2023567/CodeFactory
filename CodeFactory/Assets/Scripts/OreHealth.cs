@@ -1,11 +1,12 @@
 ﻿/****************************** Script Header ******************************\
-Script Name: 
+Script Name: OreHealth.cs
 Project: CodeFactory
-Author: 
-Editors: 
+Author: Brandon
+Editors: Brandon, Macarios
+Last Edited: October 12, 2023
 
 <Description>
-
+Holds the variables that holds the health for the ore.
 \***************************************************************************/
 
 using System.Collections;

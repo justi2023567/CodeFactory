@@ -3,6 +3,8 @@
 **Description:**
 CodeFactory is a 3D Sandbox society simulator game with robots. In this game you will start off from scratch with basically nothing at all and you will have to build a society to your liking (or not build one at all, that is also an option). You will upgrade from just using your bare hands and tools to gather resources, craft things, and build things, to using robots to not only do these things automatically for you, but do them better. You will be able to collect various resources to help you become more advanced and the more advanced you get the more advanced things you can do (especially with the robots).
 
+**CodeFactory "Roadmap":** <https://docs.google.com/document/d/1zH8x3UvpVTaJn4SwApiO8ynEpzMEShzrEH-tpxAR05Y/edit>
+
 **Installing Unity Hub and Unity Editor:**
 * Install the Unity Hub through the Unity website. Link to the Unity Hub download: <https://unity.com/unity-hub>. If this link doesn't take you to the download, the very first link when searching up Unity Hub on Google should.
 * The Unity Editor version used for this project is 2019.2.8f1 so you just need to install version 2019.2.8. There are 2 ways of installing this Unity Editor version. Option 1 is going directly to the link (Unity Editor 2019.2.8 Link: <https://unity.com/releases/editor/whats-new/2019.2.8>). Option 2 which is probably the easier way to download it is to just simply open the project in Unity Hub (explained later in the documentation). If you don't have the correct version of the Unity Hub it will tell you to install the exact version that is needed to open the project. If you download it this way make sure to have Visual Studio downloading as well (if you prefer it over VScode) since it will give you the option of downloading both at the same time.

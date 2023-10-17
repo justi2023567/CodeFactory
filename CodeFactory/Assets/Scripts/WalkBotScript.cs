@@ -103,9 +103,7 @@ public class WalkBotScript : MonoBehaviour
                                 if (othersrobots[i].transform.root.gameObject != this.transform.root.gameObject)
                                 {
                                     robotsnum = i;
-                                    Debug.Log(robotsnum + " initial");
                                     robotsnum /= 100;
-                                    Debug.Log(robotsnum + " final");
                                 }
                             }
                             StopCoroutine(Char3(robotsnum));
@@ -153,7 +151,6 @@ public class WalkBotScript : MonoBehaviour
     public IEnumerator Char3(float num)
     {
         yield return new WaitForSeconds(num);
-        Debug.Log("It has been " + num + " second/s");
 
         //Assigns all game objects with the tag "ore" as the variable "goals"
         goals = GameObject.FindGameObjectsWithTag("ore");
@@ -202,12 +199,11 @@ public class WalkBotScript : MonoBehaviour
         }
     }
     //If another object collides with the walkbot
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-
-        FixedUpdate();
-        void FixedUpdate()
-        {
+        //FixedUpdate();
+        //void FixedUpdate()
+        //{
             //Blows up the ore using the ore tag, and the walkbot can mine
             if (other.tag == "ore" && canMine == true && Vector3.Distance(new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z), new Vector3(agent.destination.x, 0, agent.destination.z)) <= 1)
             {
@@ -226,10 +222,11 @@ public class WalkBotScript : MonoBehaviour
                 //Get the other script on this object and set the closest ore to be the ore that was just mined
                 this.GetComponent<OreMining>().oreClosest = other.gameObject;
             }
-        }
+        //}
     }
     private void OnTriggerExit(Collider other)
     {
-        this.GetComponent<OreMining>().blowup = false;
+        //Debug.Log("HELP HELP ME HLEP MEH EMLEPEH EM<OE PEH");
+        //this.GetComponent<OreMining>().blowup = false;
     }
 }

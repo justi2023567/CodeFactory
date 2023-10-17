@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5585,7 +5585,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 2.605949e+16, z: 8.24e-43, w: 2.605949e+16}
+  m_BoundingSphereOverride: {x: 0, y: -20404682, z: 4e-45, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -14079,6 +14079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkBot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6047038341211121679, guid: 19902cc38ca4fc343b160bb56184d194,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6047038341211121785, guid: 19902cc38ca4fc343b160bb56184d194,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21406,7 +21411,7 @@ GameObject:
   - component: {fileID: 3604009902392269559}
   - component: {fileID: 3604009902392269558}
   - component: {fileID: 1842082298}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FlyBot
   m_TagString: Flybot
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -26302,6 +26307,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkBot
       objectReference: {fileID: 0}
+    - target: {fileID: 6047038341211121679, guid: 19902cc38ca4fc343b160bb56184d194,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6047038341211121785, guid: 19902cc38ca4fc343b160bb56184d194,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26367,6 +26377,11 @@ PrefabInstance:
       propertyPath: sparks
       value: 
       objectReference: {fileID: 5071835132905272111}
+    - target: {fileID: 6047038341211121777, guid: 19902cc38ca4fc343b160bb56184d194,
+        type: 3}
+      propertyPath: blowup
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6047038341211121678, guid: 19902cc38ca4fc343b160bb56184d194,
         type: 3}
       propertyPath: canvas

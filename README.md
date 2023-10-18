@@ -1,7 +1,7 @@
 # Documentation on CodeFactory: #
 
 **Description:**
-CodeFactory is a 3D Sandbox society simulator game with robots. In this game you will start off from scratch with basically nothing at all and you will have to build a society to your liking (or not build one at all, that is also an option). You will upgrade from just using your bare hands and tools to gather resources, craft things, and build things, to using robots to not only do these things automatically for you, but do them better. You will be able to collect various resources to help you become more advanced and the more advanced you get the more advanced things you can do (especially with the robots).
+CodeFactory is a 3D Sandbox game with robots. In this game you will start off from scratch with basically nothing at all and you will have to build a society to your liking (or not build one at all, that is also an option). You will upgrade from just using your bare hands and tools to gather resources, craft things, and build things, to using robots to not only do these things automatically for you, but do them better. You will be able to collect various resources to help you become more advanced and the more advanced you get the more advanced things you can do (especially with the robots).
 
 **CodeFactory "Roadmap":** <https://docs.google.com/document/d/1zH8x3UvpVTaJn4SwApiO8ynEpzMEShzrEH-tpxAR05Y/edit>
 

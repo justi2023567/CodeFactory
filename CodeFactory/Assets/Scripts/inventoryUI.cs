@@ -14,9 +14,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-/*
-This Code was made by Brandon from Code Factory, allowing the player to actually see their inventory with a press of a button.
-*/
+
 public class inventoryUI : MonoBehaviour
 {
     // Holds the inventory's UI gameobject

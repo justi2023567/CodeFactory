@@ -3,7 +3,7 @@ Script Name: PlayerController.cs
 Project: CodeFactory
 Author: Macarios
 Editors: Macarios, Brandon
-Last Edited: October 13, 2023
+Last Edited: November 10, 2023
 
 <Description>
 Controls the players movement options.
@@ -36,11 +36,13 @@ public class PlayerController : MonoBehaviour
     public GameObject CodeBlocksMenu;
     public GameObject UI_Shop;
     public GameObject UI_Inventory;
+    public GameObject UI_Building;
     public GameObject UI_Icons;
 
     public CodeBlocks codeBlocks;
     public SalesCubeSystem salesCubeSystem;
     public inventoryUI inventoryUI;
+    public buildingUI buildingUI;
 
     //Create a event for when a key is pressed
     public Event keyHappen;
@@ -109,6 +111,7 @@ public class PlayerController : MonoBehaviour
             CodeBlocksMenu.SetActive(false);
             UI_Shop.SetActive(false);
             UI_Inventory.SetActive(false);
+            UI_Building.SetActive(false);
             UI_Icons.SetActive(false);
             //Player is in the pause menu now, set playing to false and open to true
             playing = false;
@@ -130,6 +133,7 @@ public class PlayerController : MonoBehaviour
             codeBlocks.open = false;
             salesCubeSystem.open = false;
             inventoryUI.open = false;
+            buildingUI.open = false;
             SettingsMenu.SetActive(true);
             //Player isn't in the pause menu now, set playing to true and open to false
             playing = true;
@@ -137,6 +141,15 @@ public class PlayerController : MonoBehaviour
             //Deactivate the settings menu and put the player back into the game
             SettingsMenu.SetActive(false);
             //Return to leave the void instead of running the code above
+            return;
+        }
+
+        if (playing == true && open == false)
+        {
+            // Set cursor lock state to locked, which prevents the cursor from leaving the game
+            Cursor.lockState = CursorLockMode.Locked;
+            // Set cursor visibility to false
+            Cursor.visible = false;
             return;
         }
 

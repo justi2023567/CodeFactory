@@ -13,11 +13,7 @@ a piece of that ore that can be collected.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
-This code was made by Logan from code factory. This code is used for
-make the ore random each and everytime, while giving out the correct
-ore to the player.
-*/
+
 public class OreRandom : MonoBehaviour
 {
     // public script OreMining;

@@ -156,6 +156,7 @@ public class PlayerController : MonoBehaviour
         //If the key to change camera state is pressed, and the camera is currently free (2)
         if (Input.GetKeyDown(CameraStateKey) && CameraState == 2)
         {
+            Debug.Log("Start of camera state switch to 1");
             //Change the text on the player's UI to say "Lock Cam"
             CamText.text = "Lock Cam";
             //Change the color of the text to red
@@ -171,12 +172,14 @@ public class PlayerController : MonoBehaviour
             CameraState = 1;
             //Set reset to true
             reset = true;
+            Debug.Log("End of camera state switch to 1");
             //Return to leave the void instead of running the code below
             return;
         }
         //If the key to change camera state is pressed, and the camera is currently locked (1)
         if (Input.GetKeyDown(CameraStateKey) && CameraState == 1)
         {
+            Debug.Log("Start of camera state switch to 2");
             //Change the text on the player's UI to say "Free Cam"
             CamText.text = "Free Cam";
             //Change the color of the text to green
@@ -187,6 +190,7 @@ public class PlayerController : MonoBehaviour
             CameraState = 2;
             //Set reset to true
             reset = true;
+            Debug.Log("End of camera state switch to 2");
             //Return to leave the void instead of running code above
             return;
         }

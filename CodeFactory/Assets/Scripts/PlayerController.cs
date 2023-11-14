@@ -144,15 +144,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (playing == true && open == false)
-        {
-            // Set cursor lock state to locked, which prevents the cursor from leaving the game
-            Cursor.lockState = CursorLockMode.Locked;
-            // Set cursor visibility to false
-            Cursor.visible = false;
-            return;
-        }
-
         //If the key to change camera state is pressed, and the camera is currently free (2)
         if (Input.GetKeyDown(CameraStateKey) && CameraState == 2)
         {
@@ -192,6 +183,15 @@ public class PlayerController : MonoBehaviour
             reset = true;
             Debug.Log("End of camera state switch to 2");
             //Return to leave the void instead of running code above
+            return;
+        }
+
+        if (playing == true && open == false)
+        {
+            // Set cursor lock state to locked, which prevents the cursor from leaving the game
+            Cursor.lockState = CursorLockMode.Locked;
+            // Set cursor visibility to false
+            Cursor.visible = false;
             return;
         }
     }
